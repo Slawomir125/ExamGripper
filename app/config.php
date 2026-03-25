@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'title' => 'CookedFramework',
+    'title' => 'Examgripper',
     'default_template' => 'default',
 
     'db' => [
-        'dsn'  => 'mysql:host=localhost;dbname=cookedframework;charset=utf8mb4',
+        'dsn'  => 'mysql:host=localhost;dbname=examgripper;charset=utf8mb4',
         'user' => 'root',
         'pass' => '',
     ],

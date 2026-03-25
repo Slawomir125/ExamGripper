@@ -24,7 +24,7 @@ $currentPath = menuPath(fwCurrentPath());
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="<?=fwBaseUrl(); ?>/public/img/logo.png" alt="Bootstrap" height="40">
+      ExamGripper
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
