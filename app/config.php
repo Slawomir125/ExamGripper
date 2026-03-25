@@ -1,0 +1,20 @@
+<?php
+
+return [
+    'title' => 'CookedFramework',
+    'default_template' => 'default',
+
+    'db' => [
+        'dsn'  => 'mysql:host=localhost;dbname=cookedframework;charset=utf8mb4',
+        'user' => 'root',
+        'pass' => '',
+    ],
+
+    'menu_items' => [
+        ['label' => 'Start', 'url' => ''],
+    ],
+    'debug' => true,
+    'save_errors' => true,
+    'php_log_file' => 'php.log',
+    'sql_log_file' => 'sql.log',
+];
