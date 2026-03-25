@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} (?:^|/)(?:app|framework|datas)(?:/|$) [NC]
+RewriteRule ^ index.php?__not_found=1 [L,QSA]
+
+RewriteCond %{REQUEST_URI} \.(?:sql|log)$ [NC]
+RewriteRule ^ index.php?__not_found=1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.php [L,QSA]
