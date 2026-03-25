@@ -9,7 +9,7 @@ return [
         'user' => 'root',
         'pass' => '',
     ],
-
+    'db_scheme_check' => 2,
     'menu_items' => [
         ['label' => 'Start', 'url' => ''],
         ['label' => 'Kategorie', 'url' => 'kategorie/'],
@@ -20,4 +20,5 @@ return [
     'save_errors' => true,
     'php_log_file' => 'php.log',
     'sql_log_file' => 'sql.log',
+    'db_scheme_log_file' => 'dbScheme.log',
 ];
