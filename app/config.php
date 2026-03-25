@@ -12,6 +12,9 @@ return [
 
     'menu_items' => [
         ['label' => 'Start', 'url' => ''],
+        ['label' => 'Kategorie', 'url' => 'kategorie/'],
+        ['label' => 'Zadania', 'url' => 'zadania/'],
+        ['label' => 'Postępy', 'url' => 'postepy/'],
     ],
     'debug' => true,
     'save_errors' => true,
