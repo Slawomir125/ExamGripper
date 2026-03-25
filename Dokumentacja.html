@@ -1,0 +1,1712 @@
+<!doctype html>
+<html lang="pl">
+<head >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dokumentacja</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/CookedFramework/public/assets/app.css?v=7" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+  
+
+  
+  <script src="/CookedFramework/public/assets/app.js?v=8"></script>
+  <script src="/CookedFramework/public/assets/send.js?v=7"></script>
+  <script src="/CookedFramework/public/assets/modal.js?v=7"></script>
+  <script src="/CookedFramework/public/assets/binding.js?v=7"></script>
+  <script src="/CookedFramework/public/assets/drag.js?v=8"></script>
+  <script src="/CookedFramework/public/assets/animate.js?v=7"></script>
+</head>
+<body >
+
+<script id="page-data" type="application/json">[]</script>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/CookedFramework/public/img/logo.png" alt="Bootstrap" height="40">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainMenu">
+      <div class="navbar-nav ms-auto">
+                  
+          <a
+            class="nav-link "
+            href="/CookedFramework"
+          >
+            Start          </a>
+                  
+          <a
+            class="nav-link "
+            href="/CookedFramework/functions/"
+          >
+            Funkcje          </a>
+                  
+          <a
+            class="nav-link "
+            href="/CookedFramework/examples/"
+          >
+            Przykłady          </a>
+                  
+          <a
+            class="nav-link active"
+            href="/CookedFramework/docs"
+          >
+            Dokumentacja          </a>
+              </div>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid docs-layout py-4 ">
+  <div class="row g-4">
+    <aside class="col-12 col-lg-4 col-xl-3">
+      
+<div class="docs-sidebar-stick">
+  <div class="docs-sidebar border rounded-4 bg-white shadow-sm">
+    <div class="p-3 border-bottom">
+
+      <input
+        id="docsSearch"
+        type="search"
+        class="form-control"
+        placeholder="Szukaj w dokumentacji"
+        autocomplete="off"
+      >
+
+      <div class="small text-muted mt-2">
+        Szukaj po nazwach metod, parametrach, słowach kluczowych i treści.
+      </div>
+
+      <div id="docsSearchEmpty" class="docs-search-empty small text-muted mt-2">
+        Brak wyników.
+      </div>
+    </div>
+
+    <div class="p-3">
+              
+        <div class="docs-nav-group" data-doc-group>
+          <button
+            type="button"
+            class="docs-nav-group-button"
+            data-doc-group-button
+            aria-expanded="true"
+          >
+            <span>Podstawowe</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+          <div
+            class="docs-nav-group-body"
+            data-doc-group-body
+            style=""
+          >
+            <nav class="nav nav-pills flex-column">
+                              
+                <a
+                  href="#intro"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="intro"
+                >
+                  Wprowadzenie                </a>
+                              
+                <a
+                  href="#structure"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="structure"
+                >
+                  Struktura projektu                </a>
+                              
+                <a
+                  href="#routing"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="routing"
+                >
+                  Routing                </a>
+                              
+                <a
+                  href="#create-pages"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="create-pages"
+                >
+                  Tworzenie stron                </a>
+                              
+                <a
+                  href="#config"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="config"
+                >
+                  Config                </a>
+                          </nav>
+          </div>
+        </div>
+              
+        <div class="docs-nav-group" data-doc-group>
+          <button
+            type="button"
+            class="docs-nav-group-button"
+            data-doc-group-button
+            aria-expanded="false"
+          >
+            <span>Funkcje</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+          <div
+            class="docs-nav-group-body"
+            data-doc-group-body
+            style="display:none;"
+          >
+            <nav class="nav nav-pills flex-column">
+                              
+                <a
+                  href="#binding"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="binding"
+                >
+                  Binding                </a>
+                              
+                <a
+                  href="#events"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="events"
+                >
+                  Eventy                </a>
+                              
+                <a
+                  href="#http-api"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="http-api"
+                >
+                  Http i API                </a>
+                              
+                <a
+                  href="#modals"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="modals"
+                >
+                  Modale                </a>
+                              
+                <a
+                  href="#tabs"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="tabs"
+                >
+                  Zakładki                </a>
+                              
+                <a
+                  href="#db"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="db"
+                >
+                  Baza Danych                </a>
+                              
+                <a
+                  href="#layouts"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="layouts"
+                >
+                  Layouty                </a>
+                              
+                <a
+                  href="#components"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="components"
+                >
+                  Componenty                </a>
+                              
+                <a
+                  href="#animations"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="animations"
+                >
+                  Animacje                </a>
+                          </nav>
+          </div>
+        </div>
+              
+        <div class="docs-nav-group" data-doc-group>
+          <button
+            type="button"
+            class="docs-nav-group-button"
+            data-doc-group-button
+            aria-expanded="false"
+          >
+            <span>Inne</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+
+          <div
+            class="docs-nav-group-body"
+            data-doc-group-body
+            style="display:none;"
+          >
+            <nav class="nav nav-pills flex-column">
+                              
+                <a
+                  href="#ai-docs"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="ai-docs"
+                >
+                  Dokumentacja dla AI                </a>
+                              
+                <a
+                  href="#ai"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="ai"
+                >
+                  AI                </a>
+                              
+                <a
+                  href="#workflow"
+                  class="docs-nav-link"
+                  data-doc-link
+                  data-doc-target="workflow"
+                >
+                  workflow                </a>
+                          </nav>
+          </div>
+        </div>
+          </div>
+  </div>
+</div>    </aside>
+
+    <main class="col-12 col-lg-8 col-xl-9 docs-content">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+<style>
+.docs-layout {
+  min-width: 0;
+}
+
+.docs-content {
+  min-width: 0;
+}
+
+.docs-sidebar-stick {
+  position: sticky;
+  top: 1rem;
+  height: calc(100vh - 2rem);
+}
+
+.docs-sidebar {
+  height: 100%;
+  overflow: auto;
+}
+
+.docs-nav-group + .docs-nav-group {
+  margin-top: 1rem;
+}
+
+.docs-nav-group-button {
+  display: none;
+}
+
+.docs-nav-group-title {
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bs-secondary-color);
+  margin-bottom: .55rem;
+  padding-left: .2rem;
+}
+
+.docs-nav-group-body {
+  padding-top: 0;
+}
+
+.docs-nav-link {
+  display: block;
+  padding: .72rem .95rem;
+  border-radius: .9rem;
+  color: var(--bs-emphasis-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
+
+.docs-nav-link:hover,
+.docs-nav-link.active {
+  background: var(--bs-tertiary-bg);
+  color: var(--bs-primary);
+}
+
+.docs-nav-link.active {
+  font-weight: 800;
+}
+
+.docs-search-empty {
+  display: none;
+}
+
+.doc-section {
+  display: none;
+  scroll-margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.doc-section.is-active {
+  display: block;
+}
+
+.doc-section-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.doc-section-header p {
+  margin-bottom: 0;
+  color: var(--bs-secondary-color);
+  line-height: 1.75;
+}
+
+.doc-section-title-strong {
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: -.03em;
+  margin-bottom: .35rem;
+}
+
+.doc-intro {
+  background: linear-gradient(180deg, rgba(13,110,253,.06), rgba(13,110,253,0));
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.doc-intro-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--bs-primary);
+  margin-bottom: .5rem;
+}
+
+.doc-intro-title {
+  font-size: clamp(1.7rem, 2.2vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: -.03em;
+  margin-bottom: .75rem;
+}
+
+.doc-intro-text {
+  font-size: 1.03rem;
+  line-height: 1.8;
+  color: var(--bs-secondary-color);
+  margin-bottom: 0;
+}
+
+.doc-intro-example-title {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--bs-emphasis-color);
+  margin: 1.4rem 0 .85rem 0;
+}
+
+.docs-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.docs-keywords .badge {
+  font-weight: 600;
+}
+
+.doc-subtitle {
+  display: flex;
+  align-items: center;
+  font-size: 1.22rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  color: var(--bs-emphasis-color);
+  margin: 2rem 0 1rem 0;
+  padding: .8rem 0 0 0;
+  border-top: 3px solid var(--bs-border-color);
+}
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.doc-card {
+  background: #fff;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1rem;
+  padding: 1.35rem;
+  box-shadow: 0 .25rem 1rem rgba(0,0,0,.04);
+}
+
+.doc-kind-funkcja-php,
+.doc-kind-funkcja-js,
+.doc-kind-konstruktor {
+  border-top: 4px solid var(--bs-primary);
+}
+
+.doc-kind-obiekt,
+.doc-kind-dokumentacja-dla-ai {
+  border-top: 4px solid #6f42c1;
+}
+
+.doc-kind-framework,
+.doc-kind-html,
+.doc-kind-struktura {
+  border-top: 4px solid #198754;
+}
+
+.doc-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: .85rem;
+}
+
+.doc-kind-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: .34rem .72rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: var(--bs-tertiary-bg);
+  color: var(--bs-emphasis-color);
+}
+
+.doc-lang-javascript .doc-kind-pill,
+.doc-lang-js .doc-kind-pill {
+  background: rgba(255, 193, 7, .16);
+  color: #8a6d00;
+}
+
+.doc-lang-php .doc-kind-pill {
+  background: rgba(13, 110, 253, .12);
+  color: #0d6efd;
+}
+
+.doc-card-title {
+  font-size: 1.22rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-bottom: .8rem;
+}
+
+.doc-card-text {
+  color: var(--bs-secondary-color);
+  line-height: 1.78;
+}
+
+.doc-signatures {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+.doc-signature {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  overflow: auto;
+  font-family: var(--bs-font-monospace);
+  font-size: .95rem;
+  line-height: 1.45;
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: .85rem;
+  padding: .55rem .8rem;
+}
+
+.doc-returns {
+  margin-top: 1rem;
+  padding-top: .9rem;
+  border-top: 1px dashed var(--bs-border-color);
+  color: var(--bs-secondary-color);
+  line-height: 1.7;
+}
+
+.doc-table-wrap {
+  margin: 1rem 0 1.35rem 0;
+  padding: .35rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.doc-params-table {
+  margin-bottom: 0;
+}
+
+.doc-params-table td,
+.doc-params-table th {
+  vertical-align: top;
+  white-space: normal;
+}
+
+.doc-note-stack {
+  display: grid;
+  gap: .85rem;
+  margin-top: 1rem;
+}
+
+.doc-note-box {
+  background: var(--bs-light);
+  border-left: 4px solid var(--bs-primary);
+  border-radius: .75rem;
+  padding: 1rem;
+  line-height: 1.7;
+}
+
+.doc-code {
+  margin: 0 0 .85rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid #30363d;
+  background: #1f2328;
+}
+
+.doc-code:last-child {
+  margin-bottom: 0;
+}
+
+.doc-code-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: .6rem .8rem 0 .8rem;
+  background: #1f2328;
+}
+
+.doc-code-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: .28rem .65rem;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.doc-code-badge-php {
+  background: rgba(13, 110, 253, .18);
+  color: #7cb8ff;
+}
+
+.doc-code-badge-javascript,
+.doc-code-badge-js {
+  background: rgba(255, 193, 7, .18);
+  color: #ffd54d;
+}
+
+.doc-code-badge-html {
+  background: rgba(25, 135, 84, .18);
+  color: #63d39b;
+}
+
+.doc-code pre {
+  margin: 0 !important;
+  border-radius: 0;
+  background: #1f2328;
+  color: #e6edf3;
+  padding: .9rem 1rem 1rem 1rem;
+  overflow: auto;
+}
+
+.doc-code-php {
+  border-color: rgba(13, 110, 253, .55);
+}
+
+.doc-code-javascript,
+.doc-code-js {
+  border-color: rgba(255, 193, 7, .55);
+}
+
+.doc-code-html {
+  border-color: rgba(25, 135, 84, .55);
+}
+
+.doc-inline-code {
+  font-family: var(--bs-font-monospace);
+  font-size: .925em;
+  color: #d63384;
+}
+
+.doc-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  line-height: 1.8;
+}
+
+.doc-list li + li {
+  margin-top: .25rem;
+}
+
+.ai-block {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.hl-keyword { color: #ff7b72; }
+.hl-function { color: #d2a8ff; }
+.hl-variable { color: #ffa657; }
+.hl-comment { color: #8b949e; }
+.hl-number { color: #79c0ff; }
+
+@media (max-width: 991.98px) {
+  .docs-sidebar-stick {
+    position: static;
+    height: auto;
+  }
+}
+</style>
+
+<section id="intro" class="doc-section" data-doc-title="Wprowadzenie" data-doc-keywords="framework php javascript html bootstrap binding app pages datas public routing layout component api db logs tabs modals animations">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Wprowadzenie</div>
+    <p>CookedFramework łączy prosty routing PHP, renderowanie danych przez binding i gotowe helpery do najczęściej używanych elementów aplikacji. Strony są ładowane z folderu <code class="doc-inline-code">app/pages</code>, wspólne układy są trzymane w layoutach i componentach, a zasoby publiczne trafiają do <code class="doc-inline-code">public</code>.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Praca z jedną stroną od początku do końca</h2><p class="doc-intro-text">Najczęstszy spos&oacute;b pracy polega na utworzeniu pliku strony, wyrenderowaniu podstawowego HTML i przekazaniu danych do frontendu przez pageEnd. Binding upraszcza aktualizację widoku, bo eliminuje ręczne budowanie DOM dla list i blok&oacute;w danych. Dzięki temu HTML pozostaje czytelny, a JavaScript zajmuje się tylko pobieraniem i podmianą danych.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">app/pages</span><span class="badge text-bg-light border">pageStart</span><span class="badge text-bg-light border">pageEnd</span><span class="badge text-bg-light border">binding</span><span class="badge text-bg-light border">public</span><span class="badge text-bg-light border">datas</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+pageStart(&#039;Panel najemcy&#039;);
+?&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h1 class=&quot;h3 mb-3&quot;&gt;Panel najemcy&lt;/h1&gt;
+
+    &lt;div binding=&quot;tenant&quot;&gt;
+      &lt;div class=&quot;fw-semibold&quot;&gt;{{name}}&lt;/div&gt;
+      &lt;div class=&quot;text-muted&quot;&gt;{{email}}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;?php
+pageEnd([
+  &#039;tenant&#039; =&gt; [
+    &#039;name&#039; =&gt; &#039;Jan Kowalski&#039;,
+    &#039;email&#039; =&gt; &#039;jan@example.com&#039;,
+  ],
+]);
+?&gt;</code></pre></div><div class="doc-note-stack"><div class="doc-note-box">Jeśli dane są znane przy ładowaniu strony, najwygodniej przekazać je w pageEnd i użyć defaultBinding.</div><div class="doc-note-box">Jeśli dane mają zmieniać się po stronie JavaScript, użyj binding i Binding.set zamiast ręcznie składać HTML.</div><div class="doc-note-box">Folder datas służy do danych roboczych frameworka, a nie do treści użytkownika.</div></div></div></section>
+
+<section id="structure" class="doc-section" data-doc-title="Struktura projektu" data-doc-keywords="struktura projektu app framework public datas logs dbScheme app db pages layouts components assets img">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Struktura projektu</div>
+    <p>Projekt jest rozdzielony na kod frameworka, kod aplikacji, zasoby publiczne i dane robocze zapisywane przez sam framework. Taki podział ułatwia utrzymanie porządku i pozwala rozróżnić pliki użytkownika od plików technicznych.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Układ folder&oacute;w i odpowiedzialności</h2><p class="doc-intro-text">Folder app zawiera treść aplikacji: strony, layouty, componenty i pliki SQL opisujące strukturę bazy. Folder framework przechowuje kod silnika. Folder public udostępnia pliki dostępne z przeglądarki. Folder datas jest zablokowany po URL i służy do log&oacute;w oraz stanu technicznego frameworka.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">app</span><span class="badge text-bg-light border">framework</span><span class="badge text-bg-light border">public</span><span class="badge text-bg-light border">datas</span><span class="badge text-bg-light border">logs</span><span class="badge text-bg-light border">dbScheme</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-plaintext"><pre><code class="language-plaintext">projekt/
+│
+├── index.php
+├── .htaccess
+├── app/
+│   ├── config.php
+│   ├── db/
+│   ├── pages/
+│   ├── layouts/
+│   └── components/
+├── framework/
+├── public/
+│   ├── assets/
+│   └── img/
+└── datas/
+    ├── logs/
+    └── dbScheme/</code></pre></div></div>
+  <div class="doc-grid"><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">app/</h3><p class="doc-card-text">Kod aplikacji użytkownika. To tutaj powstają strony, layouty, componenty i definicje struktury bazy.</p><ul class="doc-list mb-0"><li>app/pages &mdash; widoki i endpointy stron.</li><li>app/layouts &mdash; układy body wybierane przez pageStart.</li><li>app/components &mdash; wsp&oacute;łdzielone fragmenty interfejsu.</li><li>app/db &mdash; pliki SQL opisujące strukturę tabel.</li></ul></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">framework/</h3><p class="doc-card-text">Kod silnika frameworka. Zawiera routing, helpery PHP, warstwę DB i pliki odpowiedzialne za wsp&oacute;lne mechanizmy aplikacji.</p></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">public/</h3><p class="doc-card-text">Publiczne zasoby dostępne z poziomu przeglądarki.</p><ul class="doc-list mb-0"><li>public/assets &mdash; JavaScript, CSS i pliki używane przez frontend.</li><li>public/img &mdash; obrazy i grafiki używane przez strony i componenty.</li></ul></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">datas/</h3><p class="doc-card-text">Dane techniczne zapisywane przez framework. Folder nie powinien być dostępny po URL.</p><ul class="doc-list mb-0"><li>datas/logs/php.log &mdash; historia błęd&oacute;w PHP.</li><li>datas/logs/sql.log &mdash; historia błęd&oacute;w SQL.</li><li>datas/dbScheme/state.log &mdash; stan synchronizacji plik&oacute;w SQL z app/db.</li></ul></article></div></section>
+
+<section id="routing" class="doc-section" data-doc-title="Routing" data-doc-keywords="routing index htaccess app pages fwBaseUrl fwUrl fwCurrentPath route adresy">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Routing</div>
+    <p>Routing opiera się na głównym pliku <code class="doc-inline-code">index.php</code>, który odbiera adres po rewrite i mapuje go na plik strony w <code class="doc-inline-code">app/pages</code>. Dzięki temu adresy pozostają czytelne, a struktura widoków jest bezpośrednio powiązana z układem katalogów.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Jak adres trafia do widoku</h2><p class="doc-intro-text">Adres strony jest najpierw przepisywany przez .htaccess do gł&oacute;wnego index.php. Następnie framework odczytuje ścieżkę z URL, czyści ją i szuka odpowiadającego pliku w app/pages. Pusty adres ładuje app/pages/index.php, a zagnieżdżone ścieżki odpowiadają podfolderom.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">index.php</span><span class="badge text-bg-light border">.htaccess</span><span class="badge text-bg-light border">app/pages</span><span class="badge text-bg-light border">route</span><span class="badge text-bg-light border">fwUrl</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;a href=&quot;&lt;?= route(&#039;docs&#039;) ?&gt;&quot;&gt;Dokumentacja&lt;/a&gt;
+&lt;a href=&quot;&lt;?= route(&#039;examples/persons-crud&#039;) ?&gt;&quot;&gt;Przykład CRUD&lt;/a&gt;</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">route</h3><div class="doc-signatures"><div class="doc-signature">route($path = &#039;&#039;, $query = []): string</div></div><p class="doc-card-text">Buduje bezpieczny adres URL do użycia w HTML. Łączy ścieżkę wewnętrzną z bazowym adresem aplikacji i w razie potrzeby dodaje query string.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$path</code></td><td>string</td><td>Ścieżka wewnętrzna aplikacji.</td></tr><tr><td><code>$query</code></td><td>array</td><td>Opcjonalne parametry URL.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Gotowy, bezpieczny adres do użycia np. w href.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;a href=&quot;&lt;?= route(&#039;docs&#039;) ?&gt;&quot;&gt;Dokumentacja&lt;/a&gt;
+&lt;a href=&quot;&lt;?= route(&#039;examples/search-list&#039;, [&#039;q&#039; =&gt; &#039;woda&#039;]) ?&gt;&quot;&gt;Szukaj&lt;/a&gt;</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">fwBaseUrl</h3><div class="doc-signatures"><div class="doc-signature">fwBaseUrl(): string</div></div><p class="doc-card-text">Zwraca bazowy adres aplikacji. Przydaje się wtedy, gdy chcesz odwołać się do wewnętrznej ścieżki poza helperem route.</p><div class="doc-returns"><strong>Zwraca:</strong> Bazowy adres aplikacji.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$base = fwBaseUrl();
+echo $base;</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">fwUrl</h3><div class="doc-signatures"><div class="doc-signature">fwUrl($path = &#039;&#039;): string</div></div><p class="doc-card-text">Buduje pełny adres wewnętrzny aplikacji. To niższy poziom niż route i najczęściej przydaje się poza HTML, np. przy generowaniu ścieżek roboczych.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$path</code></td><td>string</td><td>Ścieżka wewnętrzna aplikacji.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Pełny adres URL.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$url = fwUrl(&#039;functions/binding-js&#039;);
+echo $url;</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">fwCurrentPath</h3><div class="doc-signatures"><div class="doc-signature">fwCurrentPath(): string</div></div><p class="doc-card-text">Zwraca aktualną ścieżkę widoku bez bazowego katalogu aplikacji. Ułatwia zaznaczanie aktywnego elementu menu lub warunkowe renderowanie widoku.</p><div class="doc-returns"><strong>Zwraca:</strong> Aktualna ścieżka strony.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$current = fwCurrentPath();</code></pre></div></article>  </div>
+</section>
+
+<section id="create-pages" class="doc-section" data-doc-title="Tworzenie stron" data-doc-keywords="pageStart pageEnd strony layouts page data binding templateData body content app pages">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Tworzenie stron</div>
+    <p>Każda strona jest zwykłym plikiem PHP. Framework narzuca tylko prosty rytm pracy: rozpoczęcie widoku przez <code class="doc-inline-code">pageStart</code>, zawartość HTML/PHP oraz zakończenie przez <code class="doc-inline-code">pageEnd</code>.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Jedna strona, jeden czytelny przepływ</h2><p class="doc-intro-text">W praktyce strona najczęściej wybiera layout, renderuje treść HTML, a na końcu przekazuje dane do frontendowych helper&oacute;w i defaultBinding. Dzięki temu plik strony pozostaje kompletny i można go czytać od g&oacute;ry do dołu bez szukania logiki po wielu warstwach.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">pageStart</span><span class="badge text-bg-light border">pageEnd</span><span class="badge text-bg-light border">layout</span><span class="badge text-bg-light border">defaultBinding</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+pageStart(&#039;Rozliczenia&#039;, &#039;default&#039;, [
+  &#039;activeMenu&#039; =&gt; &#039;settlements&#039;,
+]);
+?&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h1 class=&quot;h3 mb-3&quot;&gt;Rozliczenia&lt;/h1&gt;
+    &lt;div defaultBinding=&quot;summary&quot;&gt;
+      &lt;div class=&quot;fw-semibold&quot;&gt;{{title}}&lt;/div&gt;
+      &lt;div class=&quot;text-muted&quot;&gt;{{period}}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;?php
+pageEnd([
+  &#039;summary&#039; =&gt; [
+    &#039;title&#039; =&gt; &#039;Rozliczenie medi&oacute;w&#039;,
+    &#039;period&#039; =&gt; &#039;Styczeń 2026&#039;,
+  ],
+]);
+?&gt;</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">pageStart</h3><div class="doc-signatures"><div class="doc-signature">pageStart($title = &#039;&#039;, $template = null, $templateData = []): void</div></div><p class="doc-card-text">Rozpoczyna renderowanie strony, wybiera layout i przekazuje dane potrzebne szablonowi. To miejsce na tytuł strony, layout oraz dodatkowe dane używane przez układ.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$title</code></td><td>string</td><td>Tytuł strony.</td></tr><tr><td><code>$template</code></td><td>string|null</td><td>Nazwa layoutu z app/layouts.</td></tr><tr><td><code>$templateData</code></td><td>array</td><td>Dane pomocnicze dla layoutu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Rozpoczyna buforowanie i renderowanie strony.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+pageStart(&#039;Dokumentacja&#039;, &#039;docs&#039;, [
+  &#039;activeMenu&#039; =&gt; &#039;docs&#039;,
+]);
+?&gt;</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">pageEnd</h3><div class="doc-signatures"><div class="doc-signature">pageEnd($pageData = []): void</div></div><p class="doc-card-text">Kończy renderowanie strony i przekazuje dane do frontendu. To najwygodniejsze miejsce na dane dla defaultBinding albo dla helpera getPageData po stronie JavaScript.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$pageData</code></td><td>array</td><td>Dane przekazywane do strony i bindingu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Kończy renderowanie strony.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+pageEnd([
+  &#039;users&#039; =&gt; $users,
+  &#039;summary&#039; =&gt; $summary,
+]);
+?&gt;</code></pre></div></article>  </div>
+</section>
+
+<section id="config" class="doc-section" data-doc-title="Config" data-doc-keywords="config fwConfig app config debug save_errors menu_items default_template db">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Config</div>
+    <p>Plik <code class="doc-inline-code">app/config.php</code> przechowuje ustawienia aplikacji i mechanizmów frameworka. To tutaj określasz tytuł aplikacji, domyślny layout, konfigurację bazy i zachowanie logów.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Jedno miejsce na ustawienia aplikacji</h2><p class="doc-intro-text">Konfiguracja jest zwracana jako zwykła tablica PHP. Framework odczytuje ją podczas startu i udostępnia przez helper fwConfig. Dzięki temu ustawienia pozostają proste, przewidywalne i gotowe do użycia w stronach, layoutach oraz warstwie DB.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">app/config.php</span><span class="badge text-bg-light border">debug</span><span class="badge text-bg-light border">save_errors</span><span class="badge text-bg-light border">db</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+return [
+  &#039;title&#039; =&gt; &#039;CookedFramework&#039;,
+  &#039;default_template&#039; =&gt; &#039;default&#039;,
+  &#039;debug&#039; =&gt; true,
+  &#039;save_errors&#039; =&gt; true,
+  &#039;php_log_file&#039; =&gt; &#039;php.log&#039;,
+  &#039;sql_log_file&#039; =&gt; &#039;sql.log&#039;,
+  &#039;db&#039; =&gt; [
+    &#039;dsn&#039; =&gt; &#039;mysql:host=localhost;dbname=app;charset=utf8mb4&#039;,
+    &#039;user&#039; =&gt; &#039;root&#039;,
+    &#039;pass&#039; =&gt; &#039;&#039;,
+  ],
+];</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">fwConfig</h3><div class="doc-signatures"><div class="doc-signature">fwConfig($key = null, $default = null)</div></div><p class="doc-card-text">Odczytuje konfigurację całej aplikacji albo pojedynczą wartość z configu. Dzięki temu nie trzeba sięgać bezpośrednio do globalnych zmiennych.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$key</code></td><td>string|null</td><td>Klucz z konfiguracji.</td></tr><tr><td><code>$default</code></td><td>mixed</td><td>Wartość domyślna zwracana, gdy klucz nie istnieje.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Całą konfigurację albo pojedynczą wartość.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$title = fwConfig(&#039;title&#039;, &#039;Aplikacja&#039;);
+$debug = fwConfig(&#039;debug&#039;, false);</code></pre></div></article>  </div>
+</section>
+
+<section id="binding" class="doc-section" data-doc-title="Binding" data-doc-keywords="binding defaultBinding innerBinding template Binding.set placeholder listy dane dom renderowanie">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Binding</div>
+    <p>Binding jest podstawowym sposobem renderowania danych w widoku. Ułatwia podmianę treści bez ręcznego budowania HTML i pozwala utrzymać czytelny podział między strukturą strony a danymi.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Dane trafiają do istniejącego HTML</h2><p class="doc-intro-text">Zamiast ręcznie tworzyć elementy przez JavaScript, binding aktualizuje przygotowany wcześniej HTML. Ten sam mechanizm obsługuje zar&oacute;wno dane startowe przekazane przez pageEnd, jak i dane pobrane p&oacute;źniej przez API. Dzięki temu widok jest sp&oacute;jny, a kod łatwiej utrzymać i rozszerzać.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">defaultBinding</span><span class="badge text-bg-light border">binding</span><span class="badge text-bg-light border">innerBinding</span><span class="badge text-bg-light border">template</span><span class="badge text-bg-light border">Binding.set</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div binding=&quot;items&quot;&gt;
+  &lt;div template class=&quot;border-bottom py-2&quot;&gt;
+    &lt;div class=&quot;fw-semibold&quot;&gt;{{name}}&lt;/div&gt;
+    &lt;div class=&quot;text-muted small&quot;&gt;{{unit}}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="doc-note-stack"><div class="doc-note-box">defaultBinding najlepiej sprawdza się przy danych znanych już podczas ładowania strony.</div><div class="doc-note-box">binding i Binding.set są wygodne wtedy, gdy dane przychodzą z API lub zmieniają się po stronie JavaScript.</div><div class="doc-note-box">template stosuj do list. Dla pojedynczych blok&oacute;w nie jest potrzebny.</div></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">defaultBinding</h3><div class="doc-signatures"><div class="doc-signature">defaultBinding=&quot;nazwa&quot;</div></div><p class="doc-card-text">Automatycznie łączy element z danymi przekazanymi w pageEnd. To najprostsza forma renderowania danych startowych na stronie.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>nazwa</code></td><td>string</td><td>Klucz z tablicy przekazanej do pageEnd.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Element zostaje wypełniony danymi przy renderowaniu strony.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div defaultBinding=&quot;summary&quot;&gt;
+  &lt;div&gt;{{title}}&lt;/div&gt;
+  &lt;div&gt;{{period}}&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;?php
+pageEnd([
+  &#039;summary&#039; =&gt; [
+    &#039;title&#039; =&gt; &#039;Rozliczenie&#039;,
+    &#039;period&#039; =&gt; &#039;Luty 2026&#039;,
+  ],
+]);
+?&gt;</code></pre></div></article><article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">binding</h3><div class="doc-signatures"><div class="doc-signature">binding=&quot;nazwa&quot;</div></div><p class="doc-card-text">Oznacza obszar aktualizowany ręcznie przez JavaScript. Sam binding nie pobiera danych &mdash; oczekuje ich przez Binding.set.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>nazwa</code></td><td>string</td><td>Klucz, pod kt&oacute;rym JavaScript ustawia dane.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Element może zostać odświeżony w dowolnym momencie działania strony.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div binding=&quot;tenant&quot;&gt;
+  &lt;div&gt;{{name}}&lt;/div&gt;
+  &lt;div&gt;{{email}}&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">Binding.set(&#039;tenant&#039;, {
+  name: &#039;Jan Kowalski&#039;,
+  email: &#039;jan@example.com&#039;
+});</code></pre></div></article><article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">innerBinding</h3><div class="doc-signatures"><div class="doc-signature">innerBinding=&quot;ścieżka&quot;</div></div><p class="doc-card-text">Renderuje dane zagnieżdżone wewnątrz bieżącego obiektu. Przydaje się, gdy jeden rekord zawiera kolejną listę lub blok obiekt&oacute;w.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>ścieżka</code></td><td>string</td><td>Ścieżka do zagnieżdżonych danych.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Dzieci elementu są renderowane na podstawie danych z bieżącego obiektu.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div template class=&quot;mb-3&quot;&gt;
+  &lt;div class=&quot;fw-semibold&quot;&gt;{{number}}&lt;/div&gt;
+
+  &lt;div innerBinding=&quot;items&quot;&gt;
+    &lt;div template class=&quot;small text-muted&quot;&gt;{{name}}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></article><article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">template</h3><div class="doc-signatures"><div class="doc-signature">template</div></div><p class="doc-card-text">Wskazuje element wzorcowy używany do renderowania listy. Framework klonuje go dla kolejnych rekord&oacute;w i podstawia dane do placeholder&oacute;w.</p><div class="doc-returns"><strong>Zwraca:</strong> Element staje się wzorcem dla listy.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div binding=&quot;items&quot;&gt;
+  &lt;div template class=&quot;border rounded p-3 mb-2&quot;&gt;
+    &lt;div&gt;{{name}}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">Binding.set</h3><div class="doc-signatures"><div class="doc-signature">Binding.set(name, value): void</div></div><p class="doc-card-text">Ustawia dane dla bindingu po stronie JavaScript. To podstawowy spos&oacute;b odświeżania widoku po odpowiedzi z API albo po lokalnej zmianie danych.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>Nazwa bindingu.</td></tr><tr><td><code>value</code></td><td>any</td><td>Obiekt, tablica albo wartość do wyrenderowania.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const data = await get(&#039;api::list&#039;);
+Binding.set(&#039;items&#039;, data.items || []);</code></pre></div></article>  </div>
+</section>
+
+<section id="events" class="doc-section" data-doc-title="Eventy" data-doc-keywords="click change edit keydown keyup clickData changeData editData setText hide getValue hasItems onReady eventy helpery js">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Eventy</div>
+    <p>Helpery eventów upraszczają obsługę kliknięć, zmian formularzy i pracy z klawiaturą. Działają delegacyjnie i pozwalają pisać krótszy, bardziej spójny kod niż ręczne addEventListener dla każdego elementu osobno.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Jednolity styl obsługi interakcji</h2><p class="doc-intro-text">Eventy w CookedFramework mają podobną składnię i ten sam spos&oacute;b przekazywania danych. Dzięki temu można mieszać obsługę kliknięć, edycji i klawiatury bez zmiany stylu kodu. Dodatkowe helpery, takie jak setText czy getValue, skracają najczęstsze operacje na formularzach i prostych blokach treści.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">click</span><span class="badge text-bg-light border">change</span><span class="badge text-bg-light border">edit</span><span class="badge text-bg-light border">keyDown</span><span class="badge text-bg-light border">keyUp</span><span class="badge text-bg-light border">setText</span><span class="badge text-bg-light border">getValue</span><span class="badge text-bg-light border">hide</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">function loadItems()
+{
+
+}
+
+edit(&#039;searchText&#039;, async () =&gt; {
+  await loadItems();
+});
+
+click(&#039;btnClear&#039;, () =&gt; {
+  setText(&#039;searchInfo&#039;, &#039;Wyniki zostały wyczyszczone.&#039;);
+});</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">click</h3><div class="doc-signatures"><div class="doc-signature">click(selector, handler): void</div></div><p class="doc-card-text">Obsługuje kliknięcie delegacyjnie na podstawie selektora lub ID. To podstawowy helper do przycisk&oacute;w i link&oacute;w sterujących widokiem.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja wywoływana po kliknięciu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">click(&#039;btnSave&#039;, async () =&gt; {
+  await send(&#039;api::save&#039;, { id: 15 });
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">clickData</h3><div class="doc-signatures"><div class="doc-signature">clickData(name, handler): void</div></div><p class="doc-card-text">Obsługuje kliknięcia na elementach oznaczonych atrybutem. Framework odczytuje zar&oacute;wno name, jak i data-name.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>Nazwa atrybutu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja wywoływana z wartością atrybutu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">&lt;button data-delete-person-id=&quot;15&quot;&gt;Usuń&lt;/button&gt;</code></pre></div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">clickData(&#039;delete-person-id&#039;, async (value) =&gt; {
+  await send(&#039;api::delete&#039;, { id: value });
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">change</h3><div class="doc-signatures"><div class="doc-signature">change(selector, handler): void</div></div><p class="doc-card-text">Obsługuje zmianę wartości po zakończeniu edycji pola. Przydaje się np. przy selectach, checkboxach i formularzach, gdzie reakcja nie musi następować po każdym znaku.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja obsługująca zmianę.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">change(&#039;statusSelect&#039;, (element) =&gt; {
+  setText(&#039;statusLabel&#039;, element.value);
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">changeData</h3><div class="doc-signatures"><div class="doc-signature">changeData(name, handler): void</div></div><p class="doc-card-text">Wersja atrybutowa helpera change. Sprawdza atrybut w dw&oacute;ch wariantach i przekazuje jego wartość do callbacka.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>Nazwa atrybutu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja obsługująca zmianę.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">changeData(&#039;tenant-id&#039;, (value, element) =&gt; {
+  console.log(value, element.value);
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">edit</h3><div class="doc-signatures"><div class="doc-signature">edit(selector, handler): void</div></div><p class="doc-card-text">Obsługuje edycję pola na bieżąco przez event input. To wygodny wyb&oacute;r dla wyszukiwarek, filtr&oacute;w i podglądu danych aktualizowanego podczas wpisywania.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja wywoływana podczas edycji.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">edit(&#039;searchText&#039;, async () =&gt; {
+  await loadItems(getValue(&#039;searchText&#039;).trim());
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">editData</h3><div class="doc-signatures"><div class="doc-signature">editData(name, handler): void</div></div><p class="doc-card-text">Wersja atrybutowa helpera edit. Dobrze sprawdza się przy formularzach generowanych z listy albo przy polach budowanych przez binding.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>Nazwa atrybutu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja wywoływana podczas edycji.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">editData(&#039;rate-name&#039;, (value, element) =&gt; {
+  console.log(value, element.value);
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">keyDown</h3><div class="doc-signatures"><div class="doc-signature">keyDown(selector, handler): void</div></div><p class="doc-card-text">Obsługuje naciśnięcie klawisza. Przydaje się np. do skr&oacute;t&oacute;w klawiaturowych, wyszukiwania po Enter lub sterowania formularzem.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja wywoływana przy keydown.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">keyDown(&#039;searchText&#039;, (element, e) =&gt; {
+  if (e.key === &#039;Enter&#039;) {
+    console.log(element.value);
+  }
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">keyUp</h3><div class="doc-signatures"><div class="doc-signature">keyUp(selector, handler): void</div></div><p class="doc-card-text">Obsługuje zwolnienie klawisza. Pozwala reagować po zakończeniu wpisywania znaku albo po puszczeniu klawisza sterującego.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja wywoływana przy keyup.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">keyUp(&#039;searchText&#039;, (element) =&gt; {
+  console.log(element.value);
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">keyDownData / keyUpData</h3><div class="doc-signatures"><div class="doc-signature">keyDownData(name, handler): void / keyUpData(name, handler): void</div></div><p class="doc-card-text">Atrybutowe wersje helper&oacute;w klawiaturowych. Ułatwiają pracę z polami generowanymi dynamicznie i z listami formularzy.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>Nazwa atrybutu.</td></tr><tr><td><code>handler</code></td><td>function</td><td>Funkcja wywoływana przy keydown lub keyup.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">keyUpData(&#039;line-id&#039;, (value, element) =&gt; {
+  console.log(value, element.value);
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">setText</h3><div class="doc-signatures"><div class="doc-signature">setText(selector, value): void</div></div><p class="doc-card-text">Ustawia tekst elementu bez ręcznego pobierania go z DOM i bez sprawdzania, czy element istnieje.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>value</code></td><td>string</td><td>Nowa treść tekstowa.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">setText(&#039;resultBox&#039;, &#039;Dane zostały zapisane.&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">hide</h3><div class="doc-signatures"><div class="doc-signature">hide(selector, hidden = true): void</div></div><p class="doc-card-text">Ukrywa lub pokazuje element, przywracając poprzedni display. To wygodniejsza forma niż ręczne operowanie na style.display.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>hidden</code></td><td>boolean</td><td>Określa, czy element ma być ukryty.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">hide(&#039;advancedBox&#039;, true);
+hide(&#039;advancedBox&#039;, false);</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">getValue</h3><div class="doc-signatures"><div class="doc-signature">getValue(selector, defaultValue = &quot;&quot;): string</div></div><p class="doc-card-text">Pobiera wartość pola formularza. Jeśli element nie istnieje, zwraca wartość domyślną, co upraszcza walidację i wysyłkę formularzy.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>selector</code></td><td>string</td><td>Selektor CSS albo ID elementu.</td></tr><tr><td><code>defaultValue</code></td><td>string</td><td>Wartość zwracana, gdy element nie istnieje.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Wartość pola albo wartość domyślna.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const name = getValue(&#039;nameInput&#039;);
+const email = getValue(&#039;emailInput&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">hasItems</h3><div class="doc-signatures"><div class="doc-signature">hasItems(value): boolean</div></div><p class="doc-card-text">Sprawdza, czy przekazana wartość jest tablicą i czy zawiera elementy. Ułatwia obsługę pustych stan&oacute;w i wynik&oacute;w API.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>value</code></td><td>any</td><td>Wartość do sprawdzenia.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> true dla niepustej tablicy, w pozostałych przypadkach false.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">if (!hasItems(data.items)) {
+  setText(&#039;emptyState&#039;, &#039;Brak wynik&oacute;w.&#039;);
+}</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">onReady</h3><div class="doc-signatures"><div class="doc-signature">onReady(callback): void</div></div><p class="doc-card-text">Uruchamia kod po gotowym DOM albo od razu, jeśli dokument jest już gotowy. To wygodny helper bezpieczeństwa dla fragment&oacute;w, kt&oacute;re rzeczywiście muszą poczekać na DOM.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>callback</code></td><td>function</td><td>Funkcja uruchamiana po gotowym DOM.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-bookmark-star me-2"></i>Uwagi</div><div class="doc-note-box">Jeśli skrypt jest ładowany na dole strony albo przez defer i nie potrzebuje dodatkowego oczekiwania, można pisać kod bez onReady.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">onReady(() =&gt; {
+  console.log(&#039;DOM jest gotowy.&#039;);
+});</code></pre></div></article>  </div>
+</section>
+
+<section id="http-api" class="doc-section" data-doc-title="Http i API" data-doc-keywords="get getRaw send input output error onapi api http json request response">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Http i API</div>
+    <p>Framework upraszcza komunikację między frontendem i PHP. Po stronie JavaScript pobierasz dane helperami get, getRaw i send, a po stronie PHP korzystasz z input, output, error i onapi do obsługi jednej strony z częścią API.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Jedna strona może mieć własne API</h2><p class="doc-intro-text">W prostych widokach wygodnie jest obsługiwać akcje API w tym samym pliku strony. Dzięki temu logika listy, formularza i zapisu pozostaje blisko siebie. JavaScript może korzystać ze skr&oacute;tu api::nazwa, a framework sam zamieni go na poprawny adres bieżącej strony.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">get</span><span class="badge text-bg-light border">send</span><span class="badge text-bg-light border">input</span><span class="badge text-bg-light border">output</span><span class="badge text-bg-light border">onapi</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+if (onapi(&#039;list&#039;)) {
+  output([
+    &#039;items&#039; =&gt; DB_SELECT(&#039;persons&#039;, [&#039;id&#039;, &#039;name&#039;, &#039;email&#039;])
+  ]);
+}
+?&gt;</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">get</h3><div class="doc-signatures"><div class="doc-signature">get(url, params = {}): Promise&lt;any&gt;</div></div><p class="doc-card-text">Pobiera JSON i od razu zwraca data z odpowiedzi.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>url</code></td><td>string</td><td>Adres docelowy albo skr&oacute;t api::nazwa.</td></tr><tr><td><code>params</code></td><td>object</td><td>Opcjonalne parametry URL.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Promise z odpowiedzią data.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const data = await get(&#039;api::list&#039;, { q: &#039;woda&#039; });
+Binding.set(&#039;items&#039;, data.items || []);</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">getRaw</h3><div class="doc-signatures"><div class="doc-signature">getRaw(url, params = {}): Promise&lt;string&gt;</div></div><p class="doc-card-text">Pobiera odpowiedź tekstową bez automatycznego parsowania JSON. Przydaje się wtedy, gdy endpoint zwraca zwykły tekst, fragment HTML albo kod źr&oacute;dłowy.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>url</code></td><td>string</td><td>Adres docelowy albo skr&oacute;t api::nazwa.</td></tr><tr><td><code>params</code></td><td>object</td><td>Opcjonalne parametry URL.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Promise z tekstem odpowiedzi.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const html = await getRaw(&#039;api::preview&#039;);
+document.getElementById(&#039;previewBox&#039;).innerHTML = html;</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">send</h3><div class="doc-signatures"><div class="doc-signature">send(url, data = {}): Promise&lt;any&gt;</div></div><p class="doc-card-text">Wysyła dane metodą POST jako JSON i zwraca data z odpowiedzi. To podstawowy helper do zapisu formularzy i akcji wykonywanych z poziomu interfejsu.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>url</code></td><td>string</td><td>Adres docelowy albo skr&oacute;t api::nazwa.</td></tr><tr><td><code>data</code></td><td>object</td><td>Dane wysyłane w body requestu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Promise z odpowiedzią data.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">await send(&#039;api::save&#039;, {
+  name: getValue(&#039;nameInput&#039;),
+  email: getValue(&#039;emailInput&#039;)
+});</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">input</h3><div class="doc-signatures"><div class="doc-signature">input(): array</div></div><p class="doc-card-text">Odczytuje dane wejściowe requestu po stronie PHP. Najczęściej służy do pobrania danych wysłanych przez send.</p><div class="doc-returns"><strong>Zwraca:</strong> Tablicę z danymi wejściowymi.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$data = input();
+$name = $data[&#039;name&#039;] ?? &#039;&#039;;</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">fileInput</h3><div class="doc-signatures"><div class="doc-signature">fileInput(): array</div></div><p class="doc-card-text">Odczytuje dane formularza i pliki w requestach, kt&oacute;re korzystają z przesyłania plik&oacute;w. Pozwala obsłużyć upload bez ręcznego składania struktury wejściowej.</p><div class="doc-returns"><strong>Zwraca:</strong> Tablicę z danymi formularza i plikami.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$data = fileInput();
+$file = $data[&#039;photo&#039;] ?? null;</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">output</h3><div class="doc-signatures"><div class="doc-signature">output(data): void</div></div><p class="doc-card-text">Zwraca odpowiedź JSON i kończy działanie skryptu. To najwygodniejsza forma zwracania danych z części API strony.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>data</code></td><td>array</td><td>Dane zwracane do frontendu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości. Kończy działanie skryptu.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">output([
+  &#039;ok&#039; =&gt; true,
+  &#039;items&#039; =&gt; $items,
+]);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">error</h3><div class="doc-signatures"><div class="doc-signature">error(code, message): void</div></div><p class="doc-card-text">Zwraca ustandaryzowaną odpowiedź błędu w JSON i kończy działanie skryptu.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$code</code></td><td>int|string</td><td>Kod błędu.</td></tr><tr><td><code>$message</code></td><td>string</td><td>Komunikat błędu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości. Kończy działanie skryptu.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">error(400, &#039;Nie udało się zapisać danych.&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">onapi</h3><div class="doc-signatures"><div class="doc-signature">onapi(name): bool</div></div><p class="doc-card-text">Sprawdza, czy aktualne wywołanie strony dotyczy wskazanej akcji API. Dzięki temu możesz połączyć część widokową i prostą obsługę API w jednym pliku.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$name</code></td><td>string</td><td>Nazwa akcji API.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> true albo false.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">if (onapi(&#039;delete&#039;)) {
+  $data = input();
+  DB_EXECUTE(&#039;DELETE FROM persons WHERE id = ?&#039;, [$data[&#039;id&#039;] ?? 0]);
+  output([&#039;ok&#039; =&gt; true]);
+}</code></pre></div></article>  </div>
+</section>
+
+<section id="modals" class="doc-section" data-doc-title="Modale" data-doc-keywords="Modal show ModalInfo ModalConfirm ModalForm Field Button modal js popup">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Modale</div>
+    <p>Modale w CookedFramework mają gotowy zestaw typów do informacji, potwierdzeń i formularzy. Dzięki temu nie trzeba ręcznie budować HTML okna, walidacji i przycisków za każdym razem od nowa.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Komunikaty, potwierdzenia i formularze w jednym stylu</h2><p class="doc-intro-text">Framework udostępnia wsp&oacute;lny spos&oacute;b definiowania modali. Każdy typ opiera się na polach i przyciskach, a wynik trafia z powrotem do JavaScript przez Promise. To upraszcza obsługę zapis&oacute;w, potwierdzeń usunięcia i kr&oacute;tkich formularzy.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">ModalInfo</span><span class="badge text-bg-light border">ModalConfirm</span><span class="badge text-bg-light border">ModalForm</span><span class="badge text-bg-light border">Field</span><span class="badge text-bg-light border">Button</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">click(&#039;btnAddPerson&#039;, async () =&gt; {
+  const data = await new ModalForm(
+    &#039;Nowa osoba&#039;,
+    [
+      Field.text(&#039;name&#039;, &#039;Imię i nazwisko&#039;, &#039;np. Jan Kowalski&#039;, [[true, &#039;To pole nie może być puste&#039;]]),
+      Field.email(&#039;email&#039;, &#039;E-mail&#039;, &#039;np. jan@example.com&#039;, [[&#039;^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$&#039;, &#039;Podaj poprawny adres e-mail&#039;]])
+    ],
+    [
+      Button.close(&#039;Anuluj&#039;, false, &#039;btn-secondary&#039;),
+      Button.submit(&#039;Zapisz&#039;, &#039;btn-primary&#039;)
+    ]
+  ).show();
+
+  console.log(data);
+});</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-konstruktor doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Konstruktor</span></div><h3 class="doc-card-title">ModalInfo</h3><div class="doc-signatures"><div class="doc-signature">new ModalInfo(title, text, buttons)</div></div><p class="doc-card-text">Tworzy modal informacyjny. Dobrze sprawdza się do komunikat&oacute;w po zapisie, błęd&oacute;w i kr&oacute;tkich informacji dla użytkownika.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>title</code></td><td>string</td><td>Tytuł modala.</td></tr><tr><td><code>text</code></td><td>string</td><td>Treść komunikatu.</td></tr><tr><td><code>buttons</code></td><td>array</td><td>Lista przycisk&oacute;w.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Obiekt modala gotowy do wyświetlenia.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">await new ModalInfo(&#039;Zapis zakończony&#039;, &#039;Dane zostały zapisane.&#039;).show();</code></pre></div></article><article class="doc-card doc-kind-konstruktor doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Konstruktor</span></div><h3 class="doc-card-title">ModalConfirm</h3><div class="doc-signatures"><div class="doc-signature">new ModalConfirm(title, text, buttons)</div></div><p class="doc-card-text">Tworzy modal potwierdzenia. Najczęściej służy do operacji, kt&oacute;re użytkownik powinien świadomie zatwierdzić, np. usunięcia rekordu.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>title</code></td><td>string</td><td>Tytuł modala.</td></tr><tr><td><code>text</code></td><td>string</td><td>Treść pytania.</td></tr><tr><td><code>buttons</code></td><td>array</td><td>Lista przycisk&oacute;w.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Obiekt modala gotowy do wyświetlenia.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const ok = await new ModalConfirm(&#039;Usuń osobę&#039;, &#039;Czy na pewno usunąć rekord?&#039;).show();</code></pre></div></article><article class="doc-card doc-kind-konstruktor doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Konstruktor</span></div><h3 class="doc-card-title">ModalForm</h3><div class="doc-signatures"><div class="doc-signature">new ModalForm(title, fields, buttons)</div></div><p class="doc-card-text">Tworzy modal formularza. To wygodny spos&oacute;b na kr&oacute;tkie formularze dodawania i edycji bez przeładowania strony.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>title</code></td><td>string</td><td>Tytuł modala.</td></tr><tr><td><code>fields</code></td><td>array</td><td>Lista p&oacute;l formularza.</td></tr><tr><td><code>buttons</code></td><td>array</td><td>Lista przycisk&oacute;w.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Obiekt modala gotowy do wyświetlenia.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const data = await new ModalForm(&#039;Nowa osoba&#039;, [
+  Field.text(&#039;name&#039;, &#039;Imię i nazwisko&#039;, &#039;np. Jan Kowalski&#039;),
+  Field.email(&#039;email&#039;, &#039;E-mail&#039;, &#039;np. jan@example.com&#039;)
+], [
+  Button.close(&#039;Anuluj&#039;, false, &#039;btn-secondary&#039;),
+  Button.submit(&#039;Zapisz&#039;, &#039;btn-primary&#039;)
+]).show();</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">Field.text / Field.number / Field.email / Field.none</h3><div class="doc-signatures"><div class="doc-signature">Field.text(...), Field.number(...), Field.email(...), Field.none(...)</div></div><p class="doc-card-text">Buduje pola używane wewnątrz modalnych formularzy. Dzięki temu formularz składa się z prostych deklaracji, a nie ręcznego HTML.</p><div class="doc-returns"><strong>Zwraca:</strong> Obiekt pola dla modala.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const fields = [
+  Field.text(&#039;name&#039;, &#039;Imię i nazwisko&#039;, &#039;np. Jan Kowalski&#039;),
+  Field.email(&#039;email&#039;, &#039;E-mail&#039;, &#039;np. jan@example.com&#039;),
+  Field.none(&#039;Dane będą widoczne na liście po zapisaniu.&#039;, &#039;text-muted&#039;)
+];</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">Button.button / Button.submit / Button.close / Button.none</h3><div class="doc-signatures"><div class="doc-signature">Button.button(...), Button.submit(...), Button.close(...), Button.none(...)</div></div><p class="doc-card-text">Buduje przyciski modala i określa ich działanie. To sp&oacute;jny spos&oacute;b definiowania zapis&oacute;w, anulowania i przycisk&oacute;w pomocniczych.</p><div class="doc-returns"><strong>Zwraca:</strong> Obiekt przycisku dla modala.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const buttons = [
+  Button.close(&#039;Anuluj&#039;, false, &#039;btn-secondary&#039;),
+  Button.submit(&#039;Zapisz&#039;, &#039;btn-primary&#039;)
+];</code></pre></div></article><article class="doc-card doc-kind-obiekt doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Obiekt</span></div><h3 class="doc-card-title">Modal</h3><div class="doc-signatures"><div class="doc-signature">Modal.show(modal) / modal.show(): Promise&lt;any&gt;</div></div><p class="doc-card-text">Wyświetla gotowy modal i zwraca wynik działania użytkownika. To wsp&oacute;lny punkt dla wszystkich typ&oacute;w modali.</p><div class="doc-returns"><strong>Zwraca:</strong> Promise z wynikiem działania modala.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const result = await new ModalInfo(&#039;Gotowe&#039;, &#039;Zmiany zostały zapisane.&#039;).show();</code></pre></div></article>  </div>
+</section>
+
+<section id="tabs" class="doc-section" data-doc-title="Zakładki" data-doc-keywords="tabs set-tab tab new Tabs display none zakładki">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Zakładki</div>
+    <p>Zakładki pozwalają dzielić widok na czytelne sekcje bez ręcznego pisania logiki przełączania. HTML określa strukturę, a obiekt Tabs odpowiada za aktywną zakładkę i nawigację między panelami.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Czytelny podział treści na sekcje</h2><p class="doc-intro-text">Mechanizm tabs opiera się na prostych atrybutach HTML i jednej klasie JavaScript. Dzięki temu można przełączać sekcje bez zależności od bootstrapa w samej logice przełączania. Widok pozostaje prosty, a sterowanie zakładkami można rozszerzyć o własne przyciski lub skrypty.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">tabs</span><span class="badge text-bg-light border">set-tab</span><span class="badge text-bg-light border">tab</span><span class="badge text-bg-light border">Tabs</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div tabs&gt;
+  &lt;div class=&quot;d-flex gap-2 mb-3&quot;&gt;
+    &lt;button set-tab=&quot;summary&quot; class=&quot;btn btn-outline-primary active&quot;&gt;Podsumowanie&lt;/button&gt;
+    &lt;button set-tab=&quot;meters&quot; class=&quot;btn btn-outline-primary&quot;&gt;Liczniki&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div tab=&quot;summary&quot;&gt;Zawartość podsumowania&lt;/div&gt;
+  &lt;div tab=&quot;meters&quot; style=&quot;display:none;&quot;&gt;Zawartość licznik&oacute;w&lt;/div&gt;
+&lt;/div&gt;</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">tabs / set-tab / tab</h3><div class="doc-signatures"><div class="doc-signature">tabs, set-tab=&quot;id&quot;, tab=&quot;id&quot;</div></div><p class="doc-card-text">Atrybuty HTML budujące strukturę zakładek. tabs oznacza kontener, set-tab przycisk przełączający, a tab panel z treścią.</p><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div tabs&gt;
+  &lt;button set-tab=&quot;invoices&quot;&gt;Faktury&lt;/button&gt;
+  &lt;button set-tab=&quot;settlements&quot;&gt;Rozliczenia&lt;/button&gt;
+
+  &lt;div tab=&quot;invoices&quot;&gt;Treść faktur&lt;/div&gt;
+  &lt;div tab=&quot;settlements&quot; style=&quot;display:none;&quot;&gt;Treść rozliczeń&lt;/div&gt;
+&lt;/div&gt;</code></pre></div></article><article class="doc-card doc-kind-konstruktor doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Konstruktor</span></div><h3 class="doc-card-title">Tabs</h3><div class="doc-signatures"><div class="doc-signature">new Tabs(container, startTab = null)</div></div><p class="doc-card-text">Tworzy obiekt obsługujący zakładki dla wskazanego kontenera. Przydaje się wtedy, gdy chcesz sterować zakładkami z JavaScript albo przełączać je programowo.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>container</code></td><td>string|Element</td><td>Kontener zakładek.</td></tr><tr><td><code>startTab</code></td><td>string|number|null</td><td>Opcjonalna zakładka startowa.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Obiekt Tabs.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const tabs = new Tabs(&#039;billingTabs&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">Tabs.set</h3><div class="doc-signatures"><div class="doc-signature">tabs.set(tab): void</div></div><p class="doc-card-text">Aktywuje wskazaną zakładkę po identyfikatorze albo indeksie.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>tab</code></td><td>string|number</td><td>Identyfikator albo indeks zakładki.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">tabs.set(&#039;meters&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">Tabs.get / Tabs.getIndex / Tabs.next / Tabs.prev</h3><div class="doc-signatures"><div class="doc-signature">tabs.get(): string / tabs.getIndex(): number / tabs.next(): void / tabs.prev(): void</div></div><p class="doc-card-text">Zestaw pomocniczych metod do odczytu i zmiany aktywnej zakładki.</p><div class="doc-returns"><strong>Zwraca:</strong> Identyfikator, indeks albo brak wartości &mdash; zależnie od metody.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">const activeId = tabs.get();
+const activeIndex = tabs.getIndex();
+tabs.next();
+tabs.prev();</code></pre></div></article>  </div>
+</section>
+
+<section id="db" class="doc-section" data-doc-title="Baza danych" data-doc-keywords="db query execute get select insert update app db datas dbScheme logs sql state log auto schema">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Baza Danych</div>
+    <p>Warstwa DB łączy proste helpery zapytań z automatycznym pilnowaniem struktury tabel. Framework czyta pliki SQL z <code class="doc-inline-code">app/db</code>, synchronizuje brakujące elementy przy pierwszym użyciu bazy i zapisuje swój stan oraz logi w folderze <code class="doc-inline-code">datas</code>.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Pliki SQL w app/db i techniczne dane w datas</h2><p class="doc-intro-text">Definicje tabel trzymasz w app/db jako zwykłe pliki SQL. Przy pierwszym użyciu DB framework sprawdza te pliki, tworzy brakujące tabele i &mdash; jeśli definicja została rozszerzona &mdash; dodaje brakujące kolumny do istniejącej tabeli. Stan synchronizacji trafia do datas/dbScheme/state.log, a historia błęd&oacute;w SQL do datas/logs/sql.log.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">app/db</span><span class="badge text-bg-light border">datas/dbScheme/state.log</span><span class="badge text-bg-light border">datas/logs/sql.log</span><span class="badge text-bg-light border">auto schema</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-plaintext"><pre><code class="language-plaintext">app/db/
+  persons.sql
+  places.sql
+  meters.sql
+
+datas/
+  dbScheme/state.log
+  logs/sql.log</code></pre></div><div class="doc-note-stack"><div class="doc-note-box">Framework nie tworzy własnej tabeli technicznej w bazie.</div><div class="doc-note-box">Stan synchronizacji i logi są zapisywane wyłącznie w plikach w datas.</div><div class="doc-note-box">Zmiana istniejącej definicji tabeli może dodać brakujące kolumny, ale nie usuwa i nie zmienia automatycznie istniejących p&oacute;l.</div></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_QUERY</h3><div class="doc-signatures"><div class="doc-signature">DB_QUERY($sql, $params = []): array</div></div><p class="doc-card-text">Wykonuje zapytanie i zwraca listę rekord&oacute;w. To podstawowy helper do odczytu wielu wierszy.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$sql</code></td><td>string</td><td>Zapytanie SQL.</td></tr><tr><td><code>$params</code></td><td>array</td><td>Parametry zapytania.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Tablicę rekord&oacute;w.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$persons = DB_QUERY(&#039;SELECT id, name, email FROM persons ORDER BY id DESC&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_GET</h3><div class="doc-signatures"><div class="doc-signature">DB_GET($sql, $params = []): ?array</div></div><p class="doc-card-text">Wykonuje zapytanie i zwraca jeden rekord. Jeśli zapytanie nie ma LIMIT, framework doda go automatycznie.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$sql</code></td><td>string</td><td>Zapytanie SQL.</td></tr><tr><td><code>$params</code></td><td>array</td><td>Parametry zapytania.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Jeden rekord albo null.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$person = DB_GET(&#039;SELECT * FROM persons WHERE id = ?&#039;, [$id]);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_EXECUTE</h3><div class="doc-signatures"><div class="doc-signature">DB_EXECUTE($sql, $params = []): int</div></div><p class="doc-card-text">Wykonuje zapytanie modyfikujące dane, np. INSERT, UPDATE albo DELETE.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$sql</code></td><td>string</td><td>Zapytanie SQL.</td></tr><tr><td><code>$params</code></td><td>array</td><td>Parametry zapytania.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Liczbę zmienionych wierszy.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">DB_EXECUTE(&#039;DELETE FROM persons WHERE id = ?&#039;, [$id]);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_LAST_ID</h3><div class="doc-signatures"><div class="doc-signature">DB_LAST_ID(): string</div></div><p class="doc-card-text">Zwraca ostatni identyfikator wygenerowany po INSERT.</p><div class="doc-returns"><strong>Zwraca:</strong> Ostatni identyfikator jako string.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$id = DB_LAST_ID();</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_TABLE</h3><div class="doc-signatures"><div class="doc-signature">DB_TABLE($name): array</div></div><p class="doc-card-text">Pobiera wszystkie rekordy z jednej tabeli. To prosty helper do niewielkich tabel konfiguracyjnych i przykład&oacute;w.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$name</code></td><td>string</td><td>Nazwa tabeli.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Tablicę rekord&oacute;w.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$rates = DB_TABLE(&#039;rates&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_SELECT</h3><div class="doc-signatures"><div class="doc-signature">DB_SELECT($table, $fields = [], $where = [], $end = &#039;&#039;): array</div></div><p class="doc-card-text">Buduje prosty SELECT na podstawie nazwy tabeli, listy p&oacute;l i warunk&oacute;w. Przydaje się do szybkich odczyt&oacute;w bez ręcznego składania całego SQL.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$table</code></td><td>string</td><td>Nazwa tabeli.</td></tr><tr><td><code>$fields</code></td><td>array</td><td>Lista p&oacute;l do pobrania.</td></tr><tr><td><code>$where</code></td><td>array</td><td>Proste warunki WHERE.</td></tr><tr><td><code>$end</code></td><td>string</td><td>Opcjonalny końcowy fragment zapytania, np. ORDER BY.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Tablicę rekord&oacute;w.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$persons = DB_SELECT(&#039;persons&#039;, [&#039;id&#039;, &#039;name&#039;, &#039;email&#039;], [], &#039;ORDER BY `id` DESC&#039;);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_INSERT</h3><div class="doc-signatures"><div class="doc-signature">DB_INSERT($table, $data): string</div></div><p class="doc-card-text">Wykonuje INSERT na podstawie tablicy danych i zwraca nowy identyfikator.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$table</code></td><td>string</td><td>Nazwa tabeli.</td></tr><tr><td><code>$data</code></td><td>array</td><td>Tablica danych do zapisu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Identyfikator nowego rekordu.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">$id = DB_INSERT(&#039;persons&#039;, [
+  &#039;name&#039; =&gt; &#039;Jan Kowalski&#039;,
+  &#039;email&#039; =&gt; &#039;jan@example.com&#039;
+]);</code></pre></div></article><article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">DB_UPDATE</h3><div class="doc-signatures"><div class="doc-signature">DB_UPDATE($table, $data, $where = []): int</div></div><p class="doc-card-text">Wykonuje UPDATE na podstawie tablicy danych i warunk&oacute;w WHERE.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$table</code></td><td>string</td><td>Nazwa tabeli.</td></tr><tr><td><code>$data</code></td><td>array</td><td>Dane do zmiany.</td></tr><tr><td><code>$where</code></td><td>array</td><td>Warunki WHERE.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Liczbę zmienionych rekord&oacute;w.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">DB_UPDATE(&#039;persons&#039;, [
+  &#039;name&#039; =&gt; &#039;Jan Kowalski&#039;,
+  &#039;email&#039; =&gt; &#039;jan@example.com&#039;
+], [
+  &#039;id&#039; =&gt; 15
+]);</code></pre></div></article>  </div>
+
+  <div class="doc-subtitle"><i class="bi bi-journal-text me-2"></i>Logi i stan synchronizacji</div>
+  <div class="doc-grid"><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">datas/logs/php.log</h3><p class="doc-card-text">Zapisuje błędy PHP. Logi są agregowane, więc identyczny błąd nie tworzy za każdym razem nowego wpisu, tylko aktualizuje licznik oraz datę pierwszego i ostatniego wystąpienia.</p></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">datas/logs/sql.log</h3><p class="doc-card-text">Zapisuje błędy SQL, w tym błędy zwykłych zapytań i błędy synchronizacji plik&oacute;w z app/db. Historia działa także przy debug = true, jeśli save_errors pozostaje włączone.</p></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">datas/dbScheme/state.log</h3><p class="doc-card-text">Przechowuje stan wykonania plik&oacute;w z app/db. Framework por&oacute;wnuje zapisany hash z aktualną zawartością pliku i decyduje, czy wymagana jest synchronizacja.</p></article></div></section>
+
+<section id="layouts" class="doc-section" data-doc-title="Layouty" data-doc-keywords="layouts app layouts template content pageStart body docs default blank example-view">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Layouty</div>
+    <p>Layout odpowiada za układ całego body strony. Dzięki niemu możesz używać różnych układów dla dokumentacji, przykładów i zwykłych widoków, bez kopiowania wspólnych elementów w każdym pliku.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Wsp&oacute;lny układ dla wielu stron</h2><p class="doc-intro-text">Layout jest zwykłym plikiem PHP z folderu app/layouts. Otrzymuje zawartość strony w zmiennej content i może korzystać z danych przekazanych przez pageStart. To dobre miejsce na menu, sidebary, wrappery i wsp&oacute;lne sekcje dla większej grupy widok&oacute;w.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">app/layouts</span><span class="badge text-bg-light border">pageStart</span><span class="badge text-bg-light border">templateData</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+pageStart(&#039;Dokumentacja&#039;, &#039;docs&#039;, [
+  &#039;activeMenu&#039; =&gt; &#039;docs&#039;,
+  &#039;sidebarTitle&#039; =&gt; &#039;CookedFramework&#039;,
+]);
+?&gt;</code></pre></div></div>
+  <div class="doc-grid"><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">default.php</h3><p class="doc-card-text">Standardowy układ strony. Dobrze sprawdza się dla zwykłych widok&oacute;w aplikacji.</p></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">docs.php</h3><p class="doc-card-text">Układ dokumentacji z bocznym panelem i wyszukiwaniem sekcji.</p></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">example-view.php</h3><p class="doc-card-text">Układ do prezentacji przykładu i podglądu widoku obok siebie.</p></article><article class="doc-card doc-kind-framework doc-lang-plaintext"><h3 class="doc-card-title">blank.php</h3><p class="doc-card-text">Minimalny układ bez dodatkowej struktury, przydatny dla prostych ekran&oacute;w i specjalnych odpowiedzi.</p></article></div></section>
+
+<section id="components" class="doc-section" data-doc-title="Componenty" data-doc-keywords="component app components menu sidebar php współdzielone fragmenty">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Componenty</div>
+    <p>Componenty służą do współdzielonych fragmentów HTML po stronie PHP. Dzięki nim możesz utrzymać wspólne elementy interfejsu w jednym miejscu i używać ich na wielu stronach bez duplikowania kodu.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Powtarzalne fragmenty bez kopiowania HTML</h2><p class="doc-intro-text">Component jest zwykłym plikiem PHP z folderu app/components. W odr&oacute;żnieniu od bindingu nie służy do dynamicznego renderowania danych po stronie JavaScript, tylko do wsp&oacute;łdzielonej struktury widoku po stronie serwera.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">component</span><span class="badge text-bg-light border">app/components</span><span class="badge text-bg-light border">menu</span><span class="badge text-bg-light border">sidebar</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+component(&#039;menu&#039;, [
+  &#039;items&#039; =&gt; fwConfig(&#039;menu_items&#039;, []),
+  &#039;active&#039; =&gt; &#039;docs&#039;,
+]);
+?&gt;</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-funkcja-php doc-lang-php"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja PHP</span></div><h3 class="doc-card-title">component</h3><div class="doc-signatures"><div class="doc-signature">component($name, $data = []): void</div></div><p class="doc-card-text">Renderuje plik componentu z folderu app/components i przekazuje mu dane pomocnicze.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>$name</code></td><td>string</td><td>Nazwa componentu bez rozszerzenia.</td></tr><tr><td><code>$data</code></td><td>array</td><td>Dane przekazywane do componentu.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-bookmark-star me-2"></i>Uwagi</div><div class="doc-note-box">Do renderowania prostych list danych preferuj binding. Component jest najlepszy dla wsp&oacute;łdzielonego HTML, nie dla zastępowania renderera danych.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-php"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-php">PHP</span></div><pre><code class="language-php">&lt;?php
+component(&#039;docs-sidebar&#039;, [
+  &#039;title&#039; =&gt; &#039;CookedFramework&#039;,
+  &#039;groups&#039; =&gt; $docsCategoryGroups,
+]);
+?&gt;</code></pre></div></article>  </div>
+</section>
+
+<section id="animations" class="doc-section" data-doc-title="Animacje" data-doc-keywords="animations animation children-animation Animate play back reset trigger delay easing view click hover">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Animacje</div>
+    <p>System animacji pozwala sterować wejściem elementów i dzieci głównie przez atrybuty HTML. Dzięki temu animacja pozostaje blisko widoku i nie wymaga każdorazowo osobnego kodu JavaScript dla prostych efektów wejścia i przejścia.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Atrybuty w HTML, sterowanie w JS tylko tam, gdzie trzeba</h2><p class="doc-intro-text">Animacje są definiowane gł&oacute;wnie przez atrybuty elementu. To wygodne przy sekcjach strony, kartach, listach i elementach pojawiających się po wejściu w viewport. Jeśli potrzebujesz sterowania programowego, możesz użyć metod Animate.play, Animate.back i Animate.reset.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">animation</span><span class="badge text-bg-light border">children-animation</span><span class="badge text-bg-light border">animation-trigger</span><span class="badge text-bg-light border">Animate.play</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div animation=&quot;pop,fade-in&quot; animation-trigger=&quot;view&quot; animation-time=&quot;500,300&quot;&gt;
+  &lt;div class=&quot;card p-4&quot;&gt;Nowa sekcja&lt;/div&gt;
+&lt;/div&gt;</code></pre></div></div>
+  <div class="doc-grid">
+    <article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">animation</h3><div class="doc-signatures"><div class="doc-signature">animation=&quot;preset&quot;</div></div><p class="doc-card-text">Ustawia animację elementu. Atrybut może przyjmować jeden albo kilka preset&oacute;w rozdzielonych przecinkami.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>preset</code></td><td>string</td><td>Nazwa presetu albo lista preset&oacute;w.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div animation=&quot;pop,fade-in&quot;&gt;Treść&lt;/div&gt;</code></pre></div></article><article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">children-animation</h3><div class="doc-signatures"><div class="doc-signature">children-animation=&quot;preset&quot;</div></div><p class="doc-card-text">Ustawia animację dla dzieci elementu. Dobrze sprawdza się przy listach kart, sekcjach i grupach przycisk&oacute;w.</p><div class="doc-subtitle"><i class="bi bi-table me-2"></i>Parametry</div><div class="doc-table-wrap"><div class="table-responsive"><table class="table table-sm doc-params-table align-middle"><thead><tr><th>Nazwa</th><th>Typ</th><th>Opis</th></tr></thead><tbody><tr><td><code>preset</code></td><td>string</td><td>Nazwa presetu dla dzieci.</td></tr></tbody></table></div></div><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-bookmark-star me-2"></i>Uwagi</div><div class="doc-note-box">Dzieci z własnym animation albo children-animation nie powinny być nadpisywane przez rodzica.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div children-animation=&quot;fade-in&quot; children-animation-delay=&quot;80&quot;&gt;
+  &lt;div&gt;Karta 1&lt;/div&gt;
+  &lt;div&gt;Karta 2&lt;/div&gt;
+&lt;/div&gt;</code></pre></div></article><article class="doc-card doc-kind-html doc-lang-html"><div class="doc-card-top"><span class="doc-kind-pill">HTML</span></div><h3 class="doc-card-title">animation-trigger / animation-time / animation-delay / animation-back / animation-once / animation-margin / animation-easing</h3><div class="doc-signatures"><div class="doc-signature">animation-trigger=&quot;...&quot; itd.</div></div><p class="doc-card-text">Zestaw atrybut&oacute;w sterujących momentem startu, czasem, op&oacute;źnieniem, cofaniem i easingiem animacji.</p><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-html"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-html">HTML</span></div><pre><code class="language-html">&lt;div
+  animation=&quot;zoom-in&quot;
+  animation-trigger=&quot;view&quot;
+  animation-time=&quot;500&quot;
+  animation-delay=&quot;120&quot;
+  animation-once=&quot;true&quot;
+  animation-margin=&quot;80&quot;
+  animation-easing=&quot;ease-out&quot;&gt;
+  Treść
+&lt;/div&gt;</code></pre></div></article><article class="doc-card doc-kind-funkcja-js doc-lang-javascript"><div class="doc-card-top"><span class="doc-kind-pill">Funkcja JS</span></div><h3 class="doc-card-title">Animate.play / Animate.back / Animate.reset</h3><div class="doc-signatures"><div class="doc-signature">Animate.play(target) / Animate.back(target) / Animate.reset(target)</div></div><p class="doc-card-text">Steruje animacją z poziomu JavaScript wtedy, gdy potrzebujesz reakcji na zdarzenie lub własną logikę strony.</p><div class="doc-returns"><strong>Zwraca:</strong> Nie zwraca wartości.</div><div class="doc-subtitle"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-javascript"><div class="doc-code-top"><span class="doc-code-badge doc-code-badge-javascript">JavaScript</span></div><pre><code class="language-javascript">click(&#039;showSummary&#039;, () =&gt; {
+  Animate.play(&#039;#summaryCard&#039;);
+});</code></pre></div></article>  </div>
+</section>
+
+<section id="ai-docs" class="doc-section" data-doc-title="Dokumentacja dla AI" data-doc-keywords="ai dokumentacja dla ai funkcje opis lista chat prompt helpery">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">Dokumentacja dla AI</div>
+    <p>Ta sekcja jest przygotowana jako skrócony blok do wklejenia do chata. Zawiera listę funkcji i mechanizmów frameworka wraz z krótkim opisem ich roli, bez sygnatur i tabel parametrów.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Kr&oacute;tki opis funkcji do użycia w rozmowie z modelem</h2><p class="doc-intro-text">Ten blok ma pom&oacute;c modelowi szybko zorientować się, jakie mechanizmy są dostępne i do czego służą. Szczeg&oacute;ły działania, parametry i przykłady są opisane w pozostałych sekcjach dokumentacji.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">AI</span><span class="badge text-bg-light border">skr&oacute;t funkcji</span><span class="badge text-bg-light border">opis mechanizm&oacute;w</span><span class="badge text-bg-light border">prompt</span></div><div class="doc-intro-example-title"><i class="bi bi-code-square me-2"></i>Przykład</div><div class="doc-code doc-code-plaintext"><pre><code class="language-plaintext">PHP / framework
+pageStart &mdash; rozpoczyna stronę i wybiera layout
+pageEnd &mdash; kończy stronę i przekazuje dane do frontendu
+component &mdash; renderuje wsp&oacute;łdzielony fragment widoku
+fwConfig &mdash; odczytuje konfigurację frameworka
+fwUrl &mdash; buduje adres URL
+fwBaseUrl &mdash; zwraca bazowy adres aplikacji
+fwCurrentPath &mdash; zwraca aktualną ścieżkę strony
+route &mdash; buduje bezpieczny URL do użycia w HTML
+input &mdash; pobiera dane wejściowe requestu
+fileInput &mdash; pobiera dane wejściowe z obsługą plik&oacute;w
+output &mdash; zwraca odpowiedź JSON
+error &mdash; zwraca błąd API
+onapi &mdash; sprawdza aktualną akcję API
+Baza danych
+DB_QUERY &mdash; wykonuje zapytanie i zwraca listę rekord&oacute;w
+DB_GET &mdash; pobiera pojedynczy rekord
+DB_EXECUTE &mdash; wykonuje zapytanie modyfikujące dane
+DB_LAST_ID &mdash; zwraca ostatnie ID po insercie
+DB_TABLE &mdash; pobiera całą tabelę
+DB_SELECT &mdash; buduje prosty select
+DB_INSERT &mdash; wstawia rekord
+DB_UPDATE &mdash; aktualizuje rekord
+schema sync &mdash; uruchamia pliki SQL z app/db/ i zapisuje stan w datas/dbScheme/state.log
+logi SQL &mdash; zapisują historię błęd&oacute;w do datas/logs/sql.log
+Binding
+defaultBinding &mdash; automatyczne dane z pageEnd
+binding &mdash; ręczne wiązanie danych
+innerBinding &mdash; wiązanie danych zagnieżdżonych
+template &mdash; wzorzec elementu dla list
+Binding.set &mdash; ustawia dane z JS
+JS &mdash; podstawowe helpery
+normalizeSelector &mdash; normalizuje selektor
+getElement &mdash; zwraca pojedynczy element
+getElements &mdash; zwraca listę element&oacute;w
+getPageData &mdash; zwraca dane strony z backendu
+setText &mdash; ustawia tekst elementu
+hide &mdash; ukrywa lub pokazuje element
+getValue &mdash; pobiera wartość z pola
+hasItems &mdash; sprawdza, czy tablica ma elementy
+onReady &mdash; uruchamia kod po gotowości DOM, jeśli to potrzebne
+JS &mdash; eventy
+click &mdash; obsługuje kliknięcia delegacyjnie
+clicked &mdash; alias dla click
+clickData &mdash; obsługuje kliknięcia po atrybucie
+change &mdash; obsługuje zmianę pola
+changeData &mdash; obsługuje zmianę po atrybucie
+edit &mdash; reaguje na bieżącą edycję pola
+editData &mdash; reaguje na edycję po atrybucie
+keyDown &mdash; obsługuje keydown
+keyUp &mdash; obsługuje keyup
+keyDownData &mdash; obsługuje keydown po atrybucie
+keyUpData &mdash; obsługuje keyup po atrybucie
+JS &mdash; HTTP
+send &mdash; wysyła dane POST do backendu
+get &mdash; pobiera JSON z backendu
+getRaw &mdash; pobiera surowy tekst
+Modale
+Modal.show &mdash; pokazuje modal
+ModalInfo &mdash; modal informacyjny
+ModalConfirm &mdash; modal potwierdzenia
+ModalForm &mdash; modal formularza
+Field &mdash; definicje p&oacute;l modala
+Button &mdash; definicje przycisk&oacute;w modala
+ModalField &mdash; pojedyncze pole modala
+ModalButton &mdash; pojedynczy przycisk modala
+Tabs
+Tabs &mdash; obsługuje zakładki
+set-tab &mdash; wskazuje zakładkę do przełączenia
+tab &mdash; oznacza panel zakładki
+set &mdash; ustawia aktywną zakładkę
+get &mdash; zwraca aktywną zakładkę
+getIndex &mdash; zwraca indeks aktywnej zakładki
+next &mdash; przechodzi do kolejnej zakładki
+prev &mdash; przechodzi do poprzedniej zakładki
+Drag and drop
+drag &mdash; oznacza element przeciągany
+drop &mdash; oznacza kontener docelowy
+drag-value &mdash; przechowuje wartość elementu
+drag-disabled &mdash; wyłącza przeciąganie
+drag-handle &mdash; ustawia uchwyt przeciągania
+drop-ghost &mdash; pokazuje miejsce upuszczenia
+drop-ghost-opacity &mdash; steruje przezroczystością ghosta
+Drag &mdash; steruje logiką drag and drop
+Animacje
+animation &mdash; ustawia preset animacji
+children-animation &mdash; animuje dzieci elementu
+animation-trigger &mdash; ustawia trigger animacji
+animation-margin &mdash; ustawia margines triggera view
+animation-back &mdash; pozwala cofać animację
+animation-once &mdash; uruchamia animację tylko raz
+animation-time &mdash; ustawia czas animacji
+animation-delay &mdash; ustawia op&oacute;źnienie animacji
+children-animation-delay &mdash; ustawia op&oacute;źnienie między dziećmi
+animation-easing &mdash; ustawia easing
+Animate.play &mdash; uruchamia animację z JS
+Animate.back &mdash; cofa animację z JS
+Animate.reset &mdash; resetuje animację z JS</code></pre></div></div></section>
+
+<section id="ai" class="doc-section" data-doc-title="AI" data-doc-keywords="ai framework cookedframework php javascript html css bootstrap binding defaultBinding innerBinding template pageStart pageEnd layout component modal tabs send get getRaw db_select db_insert db_update routing docs examples api data page-data public assets public img app config animate drag tabs modals field button source zip onapi datas logs dbScheme route setText hide getValue hasItems edit keyDown keyUp">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">AI</div>
+    <p>Ten blok zostaje utrzymany jako gotowy zestaw zasad do wykorzystania przy generowaniu kodu przez model AI.</p>
+  </div>
+
+  <div class="doc-intro">
+    <div class="doc-intro-kicker"><i class="bi bi-robot"></i>Wprowadzenie</div>
+    <h2 class="doc-intro-title">Jak korzystać z kodu frameworka z zipa</h2>
+    <p class="doc-intro-text">Ten blok ma nauczyć model, jak efektywnie korzystać z plików źródłowych frameworka i jak generować jedną kompletną stronę w jednym promptcie.</p>
+
+
+    <div class="doc-intro-example-title"><i class="bi bi-journal-code me-2"></i>Zasady dla modelu</div>
+    <div class="doc-code doc-code-plaintext"><pre><code class="language-plaintext">Pracujesz na własnym frameworku PHP + JS o nazwie CookedFramework.
+Masz generować kod zgodny z istniejącym frameworkiem i jego API, a nie tworzyć nową architekturę.
+
+Dołączony ZIP projektu jest źr&oacute;dłem prawdy dla szczeg&oacute;ł&oacute;w działania funkcji, helper&oacute;w, layout&oacute;w i plik&oacute;w frameworka.
+Ta wiadomość opisuje spos&oacute;b pracy, strukturę projektu i zasady generowania kodu.
+Osobna wiadomość zawiera listę funkcji i mechanizm&oacute;w, kt&oacute;re możesz wykorzystać.
+
+Gł&oacute;wna filozofia
+
+CookedFramework jest:
+
+lekki,
+prosty,
+oparty o zwykły PHP, HTML, CSS i JavaScript,
+oparty o Bootstrap do layoutu i wyglądu,
+bez React, Vue, Alpine, jQuery i innych obcych framework&oacute;w.
+
+Najważniejsze zasady:
+
+najpierw używaj mechanizm&oacute;w frameworka, dopiero potem ręcznego kodu,
+jeśli coś da się zrobić helperem albo atrybutem HTML, użyj tego,
+nie tw&oacute;rz nadmiarowych warstw, wrapper&oacute;w, MVC i abstrakcji,
+kod ma być prosty, czytelny i praktyczny,
+Bootstrap służy do układu i wyglądu, nie do zastępowania logiki frameworka,
+jeśli użytkownik prosi o poprawki do istniejącego kodu, r&oacute;b minimalne zmiany,
+nie zmieniaj nazw funkcji i zmiennych bez potrzeby,
+jeśli zmiany obejmują więcej niż 2 funkcje w pliku, zwracaj cały plik,
+domyślnie zapisuj całość danych jednym wsp&oacute;lnym zapisem, chyba że użytkownik wyraźnie poprosi inaczej,
+teksty na stronie mają być pisane dla użytkownika końcowego, nie mogą zawierać meta-komentarzy wynikających z implementacji.
+Jak budować strony
+
+Strony są zwykłymi plikami PHP w:
+
+app/pages/
+
+Typowy schemat strony:
+
+pageStart(...)
+HTML / PHP / JS
+pageEnd(...)
+
+Zasady:
+
+nie buduj własnego MVC,
+nie tw&oacute;rz dodatkowego routingu,
+nie tw&oacute;rz własnych renderer&oacute;w danych, jeśli framework już ma binding,
+strona ma być gotowym plikiem PHP do wklejenia do app/pages/.
+Routing
+
+Routing przechodzi przez gł&oacute;wny index.php.
+
+Adres URL jest mapowany na plik strony w app/pages/.
+Framework obsługuje wejście na strony bez budowania osobnych kontroler&oacute;w.
+Jeśli tworzysz linki w HTML, używaj helpera route(...), żeby adres był budowany poprawnie i bezpiecznie.
+
+Layouty i komponenty
+Layouty
+są w app/layouts/
+odpowiadają za układ &lt;body&gt;
+&lt;?= $content ?&gt; oznacza miejsce na zawartość strony
+layout wybierasz przez pageStart(...)
+Componenty
+są w app/components/
+służą do wsp&oacute;łdzielonych fragment&oacute;w widoku
+używaj ich do menu, sekcji powtarzalnych, wsp&oacute;lnego UI
+nie używaj component&oacute;w do renderowania prostych danych, jeśli lepszy jest binding
+Aktualna struktura projektu
+Publiczne pliki
+public/ &mdash; pliki dostępne z przeglądarki
+public/assets/ &mdash; wsp&oacute;lne skrypty i style
+public/img/ &mdash; obrazy i grafiki
+Pliki aplikacji
+app/pages/ &mdash; strony
+app/layouts/ &mdash; layouty
+app/components/ &mdash; komponenty
+app/db/ &mdash; pliki SQL opisujące strukturę bazy
+app/config.php &mdash; konfiguracja projektu
+Framework
+framework/ &mdash; kod frameworka
+Dane techniczne frameworka
+datas/ &mdash; dane robocze frameworka, niedostępne po URL
+datas/logs/ &mdash; logi błęd&oacute;w
+datas/logs/php.log &mdash; logi błęd&oacute;w PHP
+datas/logs/sql.log &mdash; logi błęd&oacute;w SQL
+datas/dbScheme/ &mdash; dane techniczne związane ze stanem synchronizacji schematu
+datas/dbScheme/state.log &mdash; stan wykonanych lub zaktualizowanych plik&oacute;w SQL
+
+Ważna zasada:
+
+app/ zawiera content i definicje użytkownika,
+datas/ zawiera dane techniczne generowane przez framework.
+Binding &mdash; podstawowy spos&oacute;b renderowania danych
+
+Binding jest jednym z najważniejszych mechanizm&oacute;w frameworka i powinien być domyślnym sposobem wyświetlania danych.
+
+Najważniejsze elementy:
+
+defaultBinding
+binding
+innerBinding
+template
+Binding.set(...)
+
+Zasady:
+
+jeśli dane pochodzą z PHP przy ładowaniu strony, preferuj defaultBinding,
+jeśli dane są ustawiane lub odświeżane z JS, używaj Binding.set(...),
+binding stosuj nie tylko do list, ale też do pojedynczych element&oacute;w i blok&oacute;w,
+jeśli renderujesz listę, używaj template,
+template stosuj tylko przy listach,
+jeśli dane są zagnieżdżone, używaj innerBinding,
+nie używaj ręcznego innerHTML, jeśli można użyć bindingu,
+nie buduj własnego renderera list w JS, jeśli da się to zrobić bindingiem.
+
+Ważne:
+
+elementy renderowane bindingiem mogą nie istnieć od razu w DOM,
+nie inicjalizuj logiki zależnej od tych element&oacute;w zbyt wcześnie,
+nie mieszaj wielu niezależnych mechanizm&oacute;w renderowania tych samych element&oacute;w,
+Binding.init() jest wywoływane tylko w app.js i nie wolno wywoływać go ponownie w kodzie stron.
+HTTP / API
+
+Do komunikacji z backendem używaj helper&oacute;w frameworka.
+
+Zasady:
+
+jeśli pokazujesz API, dawaj pełen kontekst:
+kod PHP po stronie strony / endpointu
+kod JS, kt&oacute;ry wywołuje API
+nie pokazuj urwanych fragment&oacute;w bez kontekstu,
+jeśli formularz zapisuje dane, domyślnie projektuj jeden wsp&oacute;lny zapis.
+Baza danych i schema sync
+
+Framework ma mechanizm synchronizacji schematu bazy.
+
+Źr&oacute;dłowe pliki SQL są w:
+
+app/db/
+
+Przy pierwszym użyciu DB w requestcie framework:
+
+sprawdza pliki SQL w app/db/,
+por&oacute;wnuje ich stan z datas/dbScheme/state.log,
+wykonuje nowe lub zmienione pliki,
+zapisuje stan synchronizacji w datas/dbScheme/state.log.
+
+Założenia:
+
+framework może utworzyć brakującą tabelę,
+jeśli definicja tabeli została rozszerzona, może dodać brakujące kolumny,
+nie należy zakładać automatycznego usuwania kolumn,
+nie należy zakładać automatycznej zmiany typ&oacute;w istniejących kolumn,
+to nie jest pełny system migracji wersjonowanych.
+Logi błęd&oacute;w
+PHP
+
+Logi błęd&oacute;w PHP trafiają do:
+
+datas/logs/php.log
+SQL
+
+Logi błęd&oacute;w SQL trafiają do:
+
+datas/logs/sql.log
+
+Logi są agregowane i zawierają historię wystąpień.
+Jeśli debug = true, błędy mają być widoczne normalnie.
+Jeśli save_errors = true, błędy mają być zapisywane do log&oacute;w także w trybie debug.
+Jeśli save_errors = false, framework nie zapisuje błęd&oacute;w do log&oacute;w.
+
+Modale
+
+Jeśli framework ma własne modale, używaj ich.
+Nie tw&oacute;rz ręcznie HTML modala, jeśli istnieje helper frameworka.
+
+Zasady:
+
+pokazuj realne użycie modali,
+jeśli modal zbiera dane, używaj ModalForm,
+jeśli modal potwierdza akcję, używaj ModalConfirm,
+jeśli modal tylko informuje, używaj ModalInfo,
+przy edycji danych podstawiaj wartości bezpośrednio do p&oacute;l formularza, a nie opisuj starych danych nad formularzem.
+Tabs
+
+Tabs mają korzystać z mechanizmu frameworka, a nie z ręcznego przełączania, jeśli nie jest to potrzebne.
+
+Zasady:
+
+podstawowa logika ma być prosta i czytelna,
+jeśli nie trzeba używać klas Bootstrapa do sterowania widocznością, używaj normalnego display,
+set-tab może działać dla button i input type=&quot;button&quot;.
+Drag and drop
+
+Mechanizm drag-and-drop ma być oparty o istniejące API frameworka.
+
+Zasady:
+
+nie używaj drag-item-id, tylko drag-value,
+jeśli nie ma drag-handle, przeciąga się cały element,
+obiekt Drag ma mieć onChange,
+przykłady mają być praktyczne,
+binding jest dobrym sposobem ładowania kafelk&oacute;w do drag-and-drop,
+przy dynamicznych strukturach najpierw renderuj dane, potem inicjalizuj Drag.
+Animacje
+
+Framework ma system animacji oparty o atrybuty HTML i sterowanie z JS.
+
+Zasady:
+
+sterowanie ma opierać się na atrybutach, nie na własnym systemie klas,
+animacja ma od razu przechodzić do poprawnego stanu początkowego,
+nie może migać ani restartować się bez potrzeby,
+children-animation nie może nadpisywać dzieci, kt&oacute;re mają własne animacje,
+typewriter ma pisać znak po znaku,
+reveal-down ma kończyć się normalnym stanem bez artefakt&oacute;w.
+Styl kodu JS
+Zwykłe funkcje
+
+Jeśli funkcja nie jest callbackiem, zapisuj ją jako:
+
+function sendForm()
+{
+
+}
+
+Nie używaj dla zwykłych funkcji stylu:
+
+const sendForm = () =&gt; {}
+const sendForm = async () =&gt; {}
+Callbacki
+
+Jeśli funkcja jest przekazywana jako parametr, zapisuj ją strzałkowo, np.:
+
+click(&quot;save-button&quot;, () =&gt; { ... })
+onReady
+
+Jeśli kod jest na dole strony albo nie trzeba czekać na DOM, nie owijaj wszystkiego bez potrzeby w onReady(...).
+onReady(...) stosuj tylko tam, gdzie naprawdę jest potrzebne.
+
+Styl HTML
+małe elementy typu button, a, input mogą być w jednej linii,
+jeśli rozbijasz atrybuty na wiele linii, znak &gt; ma być na końcu ostatniej linii z atrybutem, a nie w osobnej linii.
+Styl tekst&oacute;w na stronie
+
+Pisz jak wersję produkcyjną.
+
+Nie używaj sformułowań typu:
+
+&bdquo;to jest pierwsza wersja&rdquo;
+&bdquo;tu binding jest ustawiany ręcznie&rdquo;
+&bdquo;ten przykład pokazuje&rdquo;
+&bdquo;dodaj element na dole formularza&rdquo;
+
+Zamiast tego:
+
+pisz naturalnie,
+kr&oacute;tko,
+z perspektywy użytkownika końcowego,
+bez meta-komentarzy o implementacji.
+Najważniejsze rzeczy do zapamiętania
+najpierw używaj mechanizm&oacute;w frameworka, dopiero potem ręcznego kodu,
+binding jest podstawowym sposobem renderowania danych,
+template stosuj tylko przy listach,
+nie mieszaj wielu mechanizm&oacute;w renderowania tych samych element&oacute;w,
+uważaj na timing DOM przy elementach generowanych bindingiem,
+Binding.init() tylko w app.js,
+domyślnie zapisuj wszystkie dane razem jednym zapisem,
+menu ma być możliwie niezależne od danych przekazywanych przez pageStart(...),
+używaj helper&oacute;w frameworka zamiast ręcznego boilerplate,
+Bootstrap ma pomagać w układzie, nie zastępować logiki frameworka,
+jeśli użytkownik chce pełny plik, daj pełny plik,
+jeśli zmiany są większe niż drobna poprawka, zwracaj cały skrypt.
+Jak masz generować kod
+
+Masz generować kod:
+
+zgodnie z istniejącym frameworkiem,
+bez zmiany jego filozofii,
+bez obcych bibliotek,
+z wykorzystaniem pageStart/pageEnd, bindingu, atrybut&oacute;w i helper&oacute;w,
+z naciskiem na prostotę, sp&oacute;jność i praktyczne użycie istniejącego API.
+
+Jeśli użytkownik prosi o jedną stronę:
+
+wygeneruj kompletny plik PHP gotowy do wklejenia do app/pages/
+
+Jeśli użytkownik prosi o poprawki:
+
+r&oacute;b minimalne zmiany
+przy większych zmianach zwracaj cały plik
+
+Jeśli coś da się zrobić bindingiem:
+
+nie buduj ręcznego renderera
+
+Jeśli jest helper frameworka:
+
+użyj helpera, nie tw&oacute;rz obejścia
+
+Jeśli nie masz pewności co do szczeg&oacute;łu działania:
+
+sprawdź ZIP projektu, bo to on jest źr&oacute;dłem prawdy dla implementacji.</code></pre></div>  </div>
+</section>
+
+<section id="workflow" class="doc-section" data-doc-title="workflow" data-doc-keywords="workflow pageStart pageEnd component layout binding api db modal animation route datas logs">
+  <div class="doc-section-header">
+    <div class="doc-section-title-strong">workflow</div>
+    <p>Najczęstszy sposób pracy z frameworkiem jest prosty: od strony i HTML, przez binding i requesty, aż do zapisu danych i logiki pomocniczej. Dzięki temu można budować funkcjonalności krok po kroku bez nadmiarowej architektury.</p>
+  </div>
+
+  <div class="doc-intro"><div class="doc-intro-header"><div class="doc-intro-kicker"><i class="bi bi-info-circle"></i>Wprowadzenie</div><h2 class="doc-intro-title">Typowy spos&oacute;b pracy</h2><p class="doc-intro-text">Najczęściej tworzysz stronę, dodajesz HTML, wybierasz binding albo helpery API, a dopiero na końcu rozszerzasz widok o modale, tabs, animacje czy dodatkowe komponenty. Taki porządek pracy ułatwia utrzymanie sp&oacute;jności całego projektu.</p></div><div class="docs-keywords"><span class="badge text-bg-light border">pageStart</span><span class="badge text-bg-light border">binding</span><span class="badge text-bg-light border">API</span><span class="badge text-bg-light border">DB</span><span class="badge text-bg-light border">modale</span><span class="badge text-bg-light border">animacje</span><span class="badge text-bg-light border">datas</span></div></div>
+  <div class="doc-note-box">
+    <ol class="mb-0 ps-3">
+      <li>Tworzysz plik strony w <code class="doc-inline-code">app/pages</code>.</li>
+      <li>Rozpoczynasz widok przez <code class="doc-inline-code">pageStart</code> i wybierasz layout, jeśli jest potrzebny.</li>
+      <li>Piszesz zwykły HTML i PHP, a dane do widoku przekazujesz przez <code class="doc-inline-code">pageEnd</code> albo przez API.</li>
+      <li>Do renderowania danych wybierasz binding zamiast ręcznego składania list przez JavaScript.</li>
+      <li>Requesty wysyłasz helperami <code class="doc-inline-code">get</code>, <code class="doc-inline-code">getRaw</code> i <code class="doc-inline-code">send</code>.</li>
+      <li>Do pracy z bazą używasz helperów <code class="doc-inline-code">DB_*</code>.</li>
+      <li>Definicje tabel trzymasz w <code class="doc-inline-code">app/db</code>, a stan synchronizacji i logi w <code class="doc-inline-code">datas</code>.</li>
+      <li>Modale, tabs i animacje dodajesz tam, gdzie realnie upraszczają obsługę widoku.</li>
+    </ol>
+  </div>
+</section>
+
+<script>
+(function () {
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function highlightCode() {
+    const blocks = document.querySelectorAll('.doc-code code');
+
+    blocks.forEach(function (block) {
+      let html = escapeHtml(block.textContent);
+
+      html = html.replace(/(\/\/.*$)/gm, '<span class="hl-comment">$1<\/span>');
+      html = html.replace(/(#.*$)/gm, '<span class="hl-comment">$1<\/span>');
+      html = html.replace(/\b(function|return|new|const|let|var|if|else|foreach|as|echo|class|public|private|protected|static|try|catch|throw|await|async)\b/g, '<span class="hl-keyword">$1<\/span>');
+      html = html.replace(/\b([0-9]+)\b/g, '<span class="hl-number">$1<\/span>');
+      html = html.replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\s*(?=\()/g, '<span class="hl-function">$1<\/span>');
+      html = html.replace(/(\$[a-zA-Z_][a-zA-Z0-9_]*)/g, '<span class="hl-variable">$1<\/span>');
+
+      block.innerHTML = html;
+    });
+  }
+
+  const searchInput = document.getElementById('docsSearch');
+  const emptyBox = document.getElementById('docsSearchEmpty');
+  const sections = Array.from(document.querySelectorAll('.doc-section'));
+  const links = Array.from(document.querySelectorAll('[data-doc-link]'));
+  const groups = Array.from(document.querySelectorAll('[data-doc-group]'));
+
+  groups.forEach(function (group) {
+    const button = group.querySelector('[data-doc-group-button]');
+    const body = group.querySelector('[data-doc-group-body]');
+
+    if (button && body) {
+      const title = button.textContent.trim();
+      const titleEl = document.createElement('div');
+      titleEl.className = 'docs-nav-group-title';
+      titleEl.textContent = title;
+      group.insertBefore(titleEl, body);
+      body.style.display = '';
+      button.style.display = 'none';
+    }
+  });
+
+  function normalize(text) {
+    return String(text || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function getSectionById(id) {
+    return sections.find(function (section) {
+      return section.id === id;
+    }) || null;
+  }
+
+  function showOnlySection(id) {
+    sections.forEach(function (section) {
+      const active = section.id === id;
+      section.classList.toggle('is-active', active);
+    });
+  }
+
+  function activateLink(id) {
+    links.forEach(function (link) {
+      const active = link.dataset.docTarget === id;
+      link.classList.toggle('active', active);
+    });
+
+    if (id) {
+      showOnlySection(id);
+    }
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function () {
+      activateLink(link.dataset.docTarget || '');
+    });
+  });
+
+  function filterDocs() {
+    const query = normalize(searchInput ? searchInput.value : '');
+
+    links.forEach(function (link) {
+      const section = getSectionById(link.dataset.docTarget || '');
+      const haystack = section
+        ? normalize((section.dataset.docTitle || '') + ' ' + (section.dataset.docKeywords || '') + ' ' + section.textContent)
+        : '';
+
+      const visible = query === '' || haystack.includes(query);
+      link.style.display = visible ? '' : 'none';
+    });
+
+    const visibleLinks = links.filter(function (link) {
+      return link.style.display !== 'none';
+    });
+
+    groups.forEach(function (group) {
+      const visibleInGroup = Array.from(group.querySelectorAll('[data-doc-link]')).some(function (link) {
+        return link.style.display !== 'none';
+      });
+
+      group.style.display = visibleInGroup ? '' : 'none';
+    });
+
+    if (emptyBox) {
+      emptyBox.style.display = visibleLinks.length === 0 ? '' : 'none';
+    }
+
+    if (visibleLinks.length === 0) {
+      sections.forEach(function (section) {
+        section.classList.remove('is-active');
+      });
+      return;
+    }
+
+    if (query !== '') {
+      activateLink(visibleLinks[0].dataset.docTarget || '');
+      return;
+    }
+
+    const activeLink = document.querySelector('.docs-nav-link.active') || visibleLinks[0];
+    if (activeLink) {
+      activateLink(activeLink.dataset.docTarget || '');
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterDocs);
+  }
+
+  const startId = location.hash ? location.hash.replace('#', '') : (links[0] ? links[0].dataset.docTarget || '' : '');
+
+  highlightCode();
+  activateLink(startId);
+  filterDocs();
+})();
+</script>
+
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
