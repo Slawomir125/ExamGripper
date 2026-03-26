@@ -22,3 +22,13 @@ CREATE TABLE IF NOT EXISTS bloki_kodu (
     CONSTRAINT fk_bloki_pytanie   FOREIGN KEY (id_pytania)        REFERENCES pytania(id),
     CONSTRAINT fk_bloki_poprzedni FOREIGN KEY (poprzedni_blok_id) REFERENCES bloki_kodu(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+CREATE TABLE IF NOT EXISTS postepy (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    id_pytania  INT NOT NULL,
+    sesja_id    VARCHAR(255) NOT NULL,
+    kolejnosc   JSON NOT NULL,
+    czy_poprawne TINYINT(1) NOT NULL DEFAULT 0,
+    data        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_postepy_pytanie FOREIGN KEY (id_pytania) REFERENCES pytania(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;

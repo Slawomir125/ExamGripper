@@ -19,6 +19,15 @@ function fwDispatch(): void
   $file = dirname(__DIR__) . '/app/pages/' . $page . '.php';
 
   if (!is_file($file)) {
+    // Check if it's an API call
+    if (str_starts_with($page, 'api/')) {
+      $apiPath = substr($page, 4); // remove 'api/'
+      $file = dirname(__DIR__) . '/app/api/' . $apiPath . '.php';
+      if (is_file($file)) {
+        require $file;
+        return;
+      }
+    }
     // fallback
     $file = dirname(__DIR__) . '/app/pages/persons.php';
   }
