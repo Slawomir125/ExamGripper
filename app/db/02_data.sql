@@ -2,7 +2,7 @@
 -- Wygenerowano automatycznie
 
 -- Kategorie
-INSERT INTO kategorie (id, nazwa) VALUES
+INSERT IGNORE INTO kategorie (id, nazwa) VALUES
   (1, 'Python'),
   (2, 'Java – Konsola'),
   (3, 'Android – Java'),
@@ -11,7 +11,7 @@ INSERT INTO kategorie (id, nazwa) VALUES
   (6, 'React – Aplikacje webowe');
 
 -- Pytania
-INSERT INTO pytania (id, id_kategorii, tresc) VALUES
+INSERT IGNORE INTO pytania (id, id_kategorii, tresc) VALUES
   (1, 1, 'Używając podanych elementów, uzupełnij kod funkcji obliczającej silnię rekurencyjnie w języku Python, aby działał poprawnie.
 
 Podane fragmenty kodu:
@@ -495,7 +495,7 @@ async function createUser(formData) {
 ');
 
 -- Bloki kodu
-INSERT INTO bloki_kodu (id, id_pytania, kod, poprzedni_blok_id, czy_jest_wymagane) VALUES
+INSERT IGNORE INTO bloki_kodu (id, id_pytania, kod, poprzedni_blok_id, czy_jest_wymagane) VALUES
   (1, 1, 'def silnia(n):', NULL, 1),
   (2, 1, '    if n <= 1:', 1, 1),
   (3, 1, '        return 1', 2, 1),
