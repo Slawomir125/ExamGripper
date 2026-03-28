@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/../../framework/framework.php';
+session_start();
+
+require_once __DIR__ . '/../../config.php';
+require_once __DIR__ . '/../../../framework/framework.php';
 
 $data = input();
 $id_pytania = (int) ($data['id_pytania'] ?? 0);
@@ -58,7 +60,7 @@ $correct = count($wrong_blocks) === 0;
 
 // Zapisz postęp
 $sesja_id = session_id();
-DB::execRaw('INSERT INTO postepy (id_pytania, sesja_id, kolejnosc, czy_poprawne) VALUES (?, ?, ?, ?)', [
+DB_EXECUTE('INSERT INTO postepy (id_pytania, sesja_id, kolejnosc, czy_poprawne) VALUES (?, ?, ?, ?)', [
     $id_pytania,
     $sesja_id,
     json_encode($kolejnosc),

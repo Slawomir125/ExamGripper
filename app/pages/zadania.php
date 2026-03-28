@@ -68,66 +68,80 @@ shuffle($bloki);
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const draggables = document.querySelectorAll('.draggable');
-    const droppable = document.getElementById('solution-area');
-    const available = document.getElementById('available-blocks');
+    const availableBlocks = document.getElementById('available-blocks');
+    const solutionArea = document.getElementById('solution-area');
     const checkBtn = document.getElementById('check-btn');
+    const resetBtn = document.getElementById('reset-btn');
     const resultDiv = document.getElementById('result');
 
-    draggables.forEach(item => {
-        item.addEventListener('dragstart', handleDragStart);
-    });
-
-    droppable.addEventListener('dragover', handleDragOver);
-    droppable.addEventListener('drop', handleDrop);
-    available.addEventListener('dragover', handleDragOver);
-    available.addEventListener('drop', handleDrop);
-
-    function handleDragStart(e) {
-        e.dataTransfer.setData('text/plain', e.target.dataset.id);
-    }
-
-    function handleDragOver(e) {
-        e.preventDefault();
-    }
-
-    function handleDrop(e) {
-        e.preventDefault();
-        const id = e.dataTransfer.getData('text/plain');
-        const draggedElement = document.querySelector(`[data-id="${id}"]`);
-        if (draggedElement && e.target.classList.contains('droppable') || e.target.id === 'available-blocks') {
-            e.target.appendChild(draggedElement);
-        }
-    }
-
+    // Funkcja sprawdzająca rozwiązanie
     checkBtn.addEventListener('click', function() {
-        const solutionBlocks = Array.from(droppable.querySelectorAll('.block-item')).map(el => el.getAttribute('drag-value'));
-        fetch('?page=api/check-solution', {
+        const solutionBlocks = Array.from(solutionArea.querySelectorAll('[drag]')).map(el => parseInt(el.getAttribute('drag-value')));
+        
+        if (solutionBlocks.length === 0) {
+            resultDiv.innerHTML = '<div class="alert alert-warning">Przeciągnij bloczki do obszaru rozwiązania!</div>';
+            return;
+        }
+
+        fetch('<?= fwUrl('api/check-solution') ?>', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id_pytania: <?= $id_pytania ?>, kolejnosc: solutionBlocks })
+            body: JSON.stringify({ 
+                id_pytania: <?= $id_pytania ?>, 
+                kolejnosc: solutionBlocks 
+            })
         })
         .then(response => response.json())
         .then(data => {
-            // Reset colors
-            droppable.querySelectorAll('.block-item').forEach(el => el.classList.remove('bg-danger', 'text-white'));
-            // Highlight wrong blocks
-            data.wrong_blocks.forEach(id => {
-                const el = droppable.querySelector(`[drag-value="${id}"]`);
-                if (el) el.classList.add('bg-danger', 'text-white');
+            // Reset kolorów
+            solutionArea.querySelectorAll('[drag]').forEach(el => {
+                el.classList.remove('bg-danger', 'bg-success', 'text-white');
             });
-            resultDiv.innerHTML = `<div class="alert alert-info">Punkty: ${data.points}/${solutionBlocks.length}</div>`;
-            if (data.correct) {
-                resultDiv.innerHTML += '<div class="alert alert-success">Poprawne rozwiązanie!</div>';
+            
+            if (data.ok) {
+                const result = data.data;
+                
+                // Podświetl błędne bloki
+                if (result.wrong_blocks && result.wrong_blocks.length > 0) {
+                    result.wrong_blocks.forEach(id => {
+                        const el = solutionArea.querySelector(`[drag-value="${id}"]`);
+                        if (el) {
+                            el.classList.add('bg-danger', 'text-white');
+                        }
+                    });
+                }
+                
+                // Podświetl poprawne bloki
+                if (result.correct) {
+                    solutionArea.querySelectorAll('[drag]').forEach(el => {
+                        el.classList.add('bg-success', 'text-white');
+                    });
+                }
+                
+                // Wyświetl wynik
+                resultDiv.innerHTML = `<div class="alert alert-info">Punkty: ${result.points}/${solutionBlocks.length}</div>`;
+                
+                if (result.correct) {
+                    resultDiv.innerHTML += '<div class="alert alert-success">✓ Poprawne rozwiązanie!</div>';
+                } else {
+                    resultDiv.innerHTML += '<div class="alert alert-warning">Spróbuj jeszcze raz - czerwone bloki są w złej pozycji</div>';
+                }
+            } else {
+                resultDiv.innerHTML = '<div class="alert alert-danger">Błąd: ' + (data.error?.message || 'Nieznany błąd') + '</div>';
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.innerHTML = '<div class="alert alert-danger">Błąd połączenia z serwerem</div>';
         });
     });
 
-    document.getElementById('reset-btn').addEventListener('click', function() {
-        const blocks = Array.from(droppable.querySelectorAll('.block-item'));
+    // Reset
+    resetBtn.addEventListener('click', function() {
+        const blocks = Array.from(solutionArea.querySelectorAll('[drag]'));
         blocks.forEach(block => {
-            available.appendChild(block);
-            block.classList.remove('bg-danger', 'text-white');
+            availableBlocks.appendChild(block);
+            block.classList.remove('bg-danger', 'bg-success', 'text-white');
         });
         resultDiv.innerHTML = '';
     });
