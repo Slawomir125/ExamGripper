@@ -66,85 +66,65 @@ shuffle($bloki);
     </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const availableBlocks = document.getElementById('available-blocks');
-    const solutionArea = document.getElementById('solution-area');
-    const checkBtn = document.getElementById('check-btn');
-    const resetBtn = document.getElementById('reset-btn');
-    const resultDiv = document.getElementById('result');
+<script defer>
+const availableBlocks = getElement("available-blocks");
+const solutionArea = getElement("solution-area");
 
-    // Funkcja sprawdzająca rozwiązanie
-    checkBtn.addEventListener('click', function() {
-        const solutionBlocks = Array.from(solutionArea.querySelectorAll('[drag]')).map(el => parseInt(el.getAttribute('drag-value')));
-        
-        if (solutionBlocks.length === 0) {
-            resultDiv.innerHTML = '<div class="alert alert-warning">Przeciągnij bloczki do obszaru rozwiązania!</div>';
-            return;
+click("check-btn", async () => {
+    const solutionBlocks = Array.from(solutionArea.querySelectorAll("[drag]")).map((el) => parseInt(el.getAttribute("drag-value"), 10));
+
+    if (solutionBlocks.length === 0) {
+        getElement("result").innerHTML = '<div class="alert alert-warning">Przeciągnij bloczki do obszaru rozwiązania!</div>';
+        return;
+    }
+
+    try {
+        const result = await send("<?= fwUrl('api/check-solution') ?>", {
+            id_pytania: <?= (int) $id_pytania ?>,
+            kolejnosc: solutionBlocks
+        });
+
+        solutionArea.querySelectorAll("[drag]").forEach((el) => {
+            el.classList.remove("bg-danger", "bg-success", "text-white");
+        });
+
+        if (result.wrong_blocks && result.wrong_blocks.length > 0) {
+            result.wrong_blocks.forEach((id) => {
+                const el = solutionArea.querySelector('[drag-value="' + id + '"]');
+
+                if (el) {
+                    el.classList.add("bg-danger", "text-white");
+                }
+            });
         }
 
-        fetch('<?= fwUrl('api/check-solution') ?>', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                id_pytania: <?= $id_pytania ?>, 
-                kolejnosc: solutionBlocks 
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Reset kolorów
-            solutionArea.querySelectorAll('[drag]').forEach(el => {
-                el.classList.remove('bg-danger', 'bg-success', 'text-white');
+        if (result.correct) {
+            solutionArea.querySelectorAll("[drag]").forEach((el) => {
+                el.classList.add("bg-success", "text-white");
             });
-            
-            if (data.ok) {
-                const result = data.data;
-                
-                // Podświetl błędne bloki
-                if (result.wrong_blocks && result.wrong_blocks.length > 0) {
-                    result.wrong_blocks.forEach(id => {
-                        const el = solutionArea.querySelector(`[drag-value="${id}"]`);
-                        if (el) {
-                            el.classList.add('bg-danger', 'text-white');
-                        }
-                    });
-                }
-                
-                // Podświetl poprawne bloki
-                if (result.correct) {
-                    solutionArea.querySelectorAll('[drag]').forEach(el => {
-                        el.classList.add('bg-success', 'text-white');
-                    });
-                }
-                
-                // Wyświetl wynik
-                resultDiv.innerHTML = `<div class="alert alert-info">Punkty: ${result.points}/${solutionBlocks.length}</div>`;
-                
-                if (result.correct) {
-                    resultDiv.innerHTML += '<div class="alert alert-success">✓ Poprawne rozwiązanie!</div>';
-                } else {
-                    resultDiv.innerHTML += '<div class="alert alert-warning">Spróbuj jeszcze raz - czerwone bloki są w złej pozycji</div>';
-                }
-            } else {
-                resultDiv.innerHTML = '<div class="alert alert-danger">Błąd: ' + (data.error?.message || 'Nieznany błąd') + '</div>';
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            resultDiv.innerHTML = '<div class="alert alert-danger">Błąd połączenia z serwerem</div>';
-        });
+        }
+
+        getElement("result").innerHTML = '<div class="alert alert-info">Punkty: ' + (result.points ?? 0) + '/' + solutionBlocks.length + '</div>';
+
+        if (result.correct) {
+            getElement("result").innerHTML += '<div class="alert alert-success">✓ Poprawne rozwiązanie!</div>';
+        } else {
+            getElement("result").innerHTML += '<div class="alert alert-warning">Spróbuj jeszcze raz - czerwone bloki są w złej pozycji</div>';
+        }
+    } catch (error) {
+        console.error(error);
+        getElement("result").innerHTML = '<div class="alert alert-danger">Błąd połączenia z serwerem</div>';
+    }
+});
+
+click("reset-btn", () => {
+
+    solutionArea.querySelectorAll("[drag]").forEach((block) => {
+        availableBlocks.appendChild(block);
+        block.classList.remove("bg-danger", "bg-success", "text-white");
     });
 
-    // Reset
-    resetBtn.addEventListener('click', function() {
-        const blocks = Array.from(solutionArea.querySelectorAll('[drag]'));
-        blocks.forEach(block => {
-            availableBlocks.appendChild(block);
-            block.classList.remove('bg-danger', 'bg-success', 'text-white');
-        });
-        resultDiv.innerHTML = '';
-    });
+    setText("result", "");
 });
 </script>
 
@@ -158,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 </style>
 
-<script src="<?= fwUrl('public/assets/drag.js') ?>"></script>
 
 <?php
 pageEnd();
