@@ -28,6 +28,11 @@ if (!$pytanie) {
     exit;
 }
 
+// Pobierz wszystkie id pytań w tej samej kategorii
+$id_kategorii = (int) $pytanie['id_kategorii'];
+$wszystkie_pytania = DB_SELECT('pytania', ['id'], ['id_kategorii' => $id_kategorii], 'ORDER BY id ASC');
+$ids_w_kategorii = array_column($wszystkie_pytania, 'id');
+
 // Pobierz bloki
 $bloki = DB_SELECT('bloki_kodu', ['id', 'kod', 'poprzedni_blok_id', 'czy_jest_wymagane'], ['id_pytania' => $id_pytania], 'ORDER BY id ASC');
 
@@ -61,6 +66,7 @@ shuffle($bloki);
             </div>
             <button id="check-btn" class="btn btn-primary">Sprawdź rozwiązanie</button>
             <button id="reset-btn" class="btn btn-secondary ms-2">Reset</button>
+            <button id="next-btn" class="btn btn-success ms-2">Następne →</button>
             <div id="result" class="mt-3"></div>
         </div>
     </div>
@@ -69,6 +75,31 @@ shuffle($bloki);
 <script defer>
 const availableBlocks = getElement("available-blocks");
 const solutionArea = getElement("solution-area");
+
+const KATEGORIA_ID = <?= $id_kategorii ?>;
+const CURRENT_ID = <?= $id_pytania ?>;
+const WSZYSTKIE_IDS = <?= json_encode(array_values($ids_w_kategorii)) ?>;
+const STORAGE_KEY = "seen_" + KATEGORIA_ID;
+
+function getSeenIds()
+{
+    try {
+        return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "[]");
+    } catch {
+        return [];
+    }
+}
+
+function markCurrentAsSeen()
+{
+    const seen = getSeenIds();
+    if (!seen.includes(CURRENT_ID)) {
+        seen.push(CURRENT_ID);
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(seen));
+    }
+}
+
+markCurrentAsSeen();
 
 click("check-btn", async () => {
     const solutionBlocks = Array.from(solutionArea.querySelectorAll("[drag]")).map((el) => parseInt(el.getAttribute("drag-value"), 10));
@@ -125,6 +156,24 @@ click("reset-btn", () => {
     });
 
     setText("result", "");
+});
+
+click("next-btn", () => {
+    const seen = getSeenIds();
+    const niewidziane = WSZYSTKIE_IDS.filter((id) => !seen.includes(id));
+
+    if (niewidziane.length === 0) {
+        // Wszystkie pytania w kategorii zostały wyświetlone – reset i powrót na początek
+        sessionStorage.removeItem(STORAGE_KEY);
+        getElement("result").innerHTML = '<div class="alert alert-info">🎉 Przeszedłeś przez wszystkie pytania w tej kategorii! Zaczynamy od nowa.</div>';
+        setTimeout(() => {
+            window.location.href = "<?= route('zadania/') ?>?kategoria=<?= $id_kategorii ?>";
+        }, 2000);
+        return;
+    }
+
+    const losowy = niewidziane[Math.floor(Math.random() * niewidziane.length)];
+    window.location.href = "<?= route('zadania/') ?>?id=" + losowy;
 });
 </script>
 
