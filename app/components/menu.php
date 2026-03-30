@@ -21,7 +21,7 @@ function menuPath(string $url): string
 $currentPath = menuPath(fwCurrentPath());
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark py-1" style="background-color: #0f172a !important;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       ExamGripper
