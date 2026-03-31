@@ -35,8 +35,8 @@ pageStart("Kontakt");
                 <div class="mt-4">
                     <div class="fw-semibold mb-2">Adres</div>
                     <div>
-                        ul. Przykładowa 10<br>
-                        00-000 Warszawa
+                        ul. Gajowa 8<br>
+                        47-143 Zimna Wódka
                     </div>
                 </div>
             </div>
