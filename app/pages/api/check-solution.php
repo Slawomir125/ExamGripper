@@ -4,11 +4,7 @@ session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../../../framework/framework.php';
 
-if (empty($_SESSION['user_id'])) {
-    error('unauthorized', 'Musisz być zalogowany', 403);
-}
 
-$user_id = (int) $_SESSION['user_id'];
 
 $data       = input();
 $id_pytania = (int) ($data['id_pytania'] ?? 0);
@@ -65,17 +61,22 @@ foreach ($user_order as $index => $block_id) {
 }
 
 $correct = count($wrong_blocks) === 0 && count($user_order) === count($correct_order);
+if(!empty($_SESSION['user_id']))
+{
 
-// Zapisz postęp powiązany z użytkownikiem
-DB_EXECUTE(
-    'INSERT INTO postepy (id_pytania, user_id, kolejnosc, czy_poprawne) VALUES (?, ?, ?, ?)',
-    [
-        $id_pytania,
-        $user_id,
-        json_encode($kolejnosc),
-        $correct ? 1 : 0,
-    ]
-);
+    $user_id = (int) $_SESSION['user_id'];
+    DB_QUERY(
+        'INSERT INTO postepy (id_pytania, user_id, kolejnosc, czy_poprawne) VALUES (?, ?, ?, ?)',
+        [
+            $id_pytania,
+            $user_id,
+            json_encode($kolejnosc),
+            $correct ? 1 : 0,
+        ]
+    );
+     
+}
+
 
 output([
     'correct'      => $correct,
