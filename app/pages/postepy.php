@@ -1,34 +1,46 @@
 <?php
 session_start();
-pageStart('Postępy – INF.04 Builder');
 
-$sesja_id = session_id();
+if (empty($_SESSION['user_id'])) {
+    header('Location: ' . fwUrl(''));
+    exit;
+}
+
+$user_id   = (int) $_SESSION['user_id'];
+$user_name = htmlspecialchars((string) ($_SESSION['user_name'] ?? ''), ENT_QUOTES, 'UTF-8');
+
+pageStart('Postępy – INF.04 Builder');
 
 // Statystyki per kategoria
 $kategorie = DB_QUERY('SELECT id, nazwa FROM kategorie ORDER BY id ASC');
 
 $stats = [];
 foreach ($kategorie as $kat) {
-    $total = (int) (DB_GET('SELECT COUNT(*) AS cnt FROM pytania WHERE id_kategorii = ?', [$kat['id']])['cnt'] ?? 0);
+    $kat_id = (int) $kat['id'];
+
+    $total = (int) (DB_GET(
+        'SELECT COUNT(*) AS cnt FROM pytania WHERE id_kategorii = ?',
+        [$kat_id]
+    )['cnt'] ?? 0);
 
     $attempted = (int) (DB_GET(
         'SELECT COUNT(DISTINCT p.id_pytania) AS cnt
          FROM postepy p
          JOIN pytania q ON q.id = p.id_pytania
-         WHERE p.sesja_id = ? AND q.id_kategorii = ?',
-        [$sesja_id, $kat['id']]
+         WHERE p.user_id = ? AND q.id_kategorii = ?',
+        [$user_id, $kat_id]
     )['cnt'] ?? 0);
 
     $correct = (int) (DB_GET(
         'SELECT COUNT(DISTINCT p.id_pytania) AS cnt
          FROM postepy p
          JOIN pytania q ON q.id = p.id_pytania
-         WHERE p.sesja_id = ? AND q.id_kategorii = ? AND p.czy_poprawne = 1',
-        [$sesja_id, $kat['id']]
+         WHERE p.user_id = ? AND q.id_kategorii = ? AND p.czy_poprawne = 1',
+        [$user_id, $kat_id]
     )['cnt'] ?? 0);
 
     $stats[] = [
-        'id'        => $kat['id'],
+        'id'        => $kat_id,
         'nazwa'     => $kat['nazwa'],
         'total'     => $total,
         'attempted' => $attempted,
@@ -43,24 +55,23 @@ $historia = DB_QUERY(
      FROM postepy p
      JOIN pytania q ON q.id = p.id_pytania
      JOIN kategorie k ON k.id = q.id_kategorii
-     WHERE p.sesja_id = ?
+     WHERE p.user_id = ?
      ORDER BY p.data DESC
      LIMIT 10',
-    [$sesja_id]
+    [$user_id]
 );
-
 ?>
 
 <div class="d-flex align-items-start justify-content-between mb-5 flex-wrap gap-3">
     <div>
         <div class="small text-uppercase text-primary fw-semibold mb-2">
-            Twoja sesja
+            Zalogowany jako: <?= $user_name ?>
         </div>
         <h1 class="h2 fw-bold mb-2">
             Postępy nauki
         </h1>
         <p class="text-muted mb-0">
-            Postępy są śledzone dla bieżącej sesji przeglądarki.
+            Postępy są przypisane do Twojego konta i zapisywane na stałe.
         </p>
     </div>
 
@@ -148,13 +159,13 @@ $historia = DB_QUERY(
     </div>
 <?php else: ?>
     <div class="alert alert-light border">
-        Nie rozwiązałeś jeszcze żadnego zadania w tej sesji. <a href="<?= route('zadania/') ?>">Zacznij teraz →</a>
+        Nie rozwiązałeś jeszcze żadnego zadania. <a href="<?= route('zadania/') ?>">Zacznij teraz →</a>
     </div>
 <?php endif; ?>
 
 <script defer>
 click("reset-btn", async () => {
-    if (!confirm("Czy na pewno chcesz zresetować wszystkie postępy tej sesji?")) {
+    if (!confirm("Czy na pewno chcesz zresetować wszystkie swoje postępy?")) {
         return;
     }
 

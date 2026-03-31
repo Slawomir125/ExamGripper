@@ -19891,3 +19891,22 @@ reason: already executed
 dir: C:/xampp/htdocs/ExamGripper/app/db/
 files: 2
 --------------------------------------------------------------------------------
+[2026-03-31 20:05:05] DB SCHEME CHANGE
+file: 03_users.sql
+target_command: CREATE TABLE
+executed_command: CREATE TABLE
+target_sql: CREATE TABLE IF NOT EXISTS uzytkownicy (
+    id                INT AUTO_INCREMENT PRIMARY KEY,
+    email             VARCHAR(255) NOT NULL,
+    haslo_hash        VARCHAR(255) NOT NULL,
+    nazwa_wyswietlana VARCHAR(100) NOT NULL,
+    UNIQUE KEY uq_uzytkownicy_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci
+executed_sql: CREATE TABLE IF NOT EXISTS uzytkownicy (
+    id                INT AUTO_INCREMENT PRIMARY KEY,
+    email             VARCHAR(255) NOT NULL,
+    haslo_hash        VARCHAR(255) NOT NULL,
+    nazwa_wyswietlana VARCHAR(100) NOT NULL,
+    UNIQUE KEY uq_uzytkownicy_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci
+--------------------------------------------------------------------------------

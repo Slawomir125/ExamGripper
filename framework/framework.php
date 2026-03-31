@@ -545,5 +545,13 @@ function fwSetupPhpErrorHandling(): void
     set_exception_handler('fwHandlePhpException');
     register_shutdown_function('fwHandlePhpShutdown');
 }
+function fwSessionStart(): bool
+{
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        return true;
+    }
+
+    return @session_start();
+}
 
 fwSetupPhpErrorHandling();
