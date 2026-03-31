@@ -56,7 +56,8 @@ foreach ($user_order as $index => $block_id) {
     }
 }
 
-$correct = count($wrong_blocks) === 0;
+// Poprawne tylko jeśli: brak błędnych bloków ORAZ liczba bloków się zgadza
+$correct = count($wrong_blocks) === 0 && count($user_order) === count($correct_order);
 
 // Zapisz postęp
 $sesja_id = session_id();
@@ -67,5 +68,5 @@ DB_EXECUTE('INSERT INTO postepy (id_pytania, sesja_id, kolejnosc, czy_poprawne) 
     $correct ? 1 : 0
 ]);
 
-output(['correct' => $correct, 'points' => $points, 'wrong_blocks' => $wrong_blocks]);
+output(['correct' => $correct, 'points' => $points, 'wrong_blocks' => $wrong_blocks, 'total' => count($correct_order)]);
 ?>
