@@ -29,6 +29,17 @@ final class DBScheme
         return $mode;
     }
 
+    public static function alwaysReadFiles(): bool
+    {
+        $value = self::$config['db_scheme_always_read_files'] ?? null;
+
+        if ($value === null && function_exists('fwConfig')) {
+            $value = fwConfig('db_scheme_always_read_files', false);
+        }
+
+        return (bool) $value;
+    }
+
     public static function ensureDatabaseExists(): void
     {
         $dsn = (string) (self::$config['dsn'] ?? '');
@@ -61,20 +72,28 @@ final class DBScheme
                 ]
             );
 
+            $existsStmt = $pdo->prepare(
+                'SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = :name LIMIT 1'
+            );
+            $existsStmt->execute([':name' => $dbName]);
+            $exists = $existsStmt->fetchColumn() !== false;
+
+            if ($exists) {
+                return;
+            }
+
             $sql = 'CREATE DATABASE IF NOT EXISTS `' . str_replace('`', '``', $dbName) . '` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci';
             $pdo->exec($sql);
 
-            self::log('DB CREATE DATABASE OK', [
-                'database' => $dbName,
-                'sql' => $sql,
-            ]);
+            self::logChange(
+                '__database__',
+                'CREATE DATABASE',
+                'CREATE DATABASE',
+                $sql,
+                $sql
+            );
         } catch (Throwable $e) {
-            self::log('DB CREATE DATABASE ERROR', [
-                'database' => $dbName,
-                'dsn' => $serverDsn,
-                'error' => $e->getMessage(),
-                'code' => (string) $e->getCode(),
-            ]);
+            self::logError('__database__', 'CREATE DATABASE', '', $e);
         }
     }
 
@@ -98,14 +117,7 @@ final class DBScheme
             self::processFiles($pdo);
             self::$checked = true;
         } catch (Throwable $e) {
-            self::log('DB SCHEME FATAL', [
-                'method' => self::requestMethod(),
-                'url' => self::requestUri(),
-                'error' => $e->getMessage(),
-                'code' => (string) $e->getCode(),
-                'file' => $e->getFile(),
-                'line' => $e->getLine(),
-            ]);
+            self::logError('__dbScheme__', 'DB SCHEME', '', $e);
         } finally {
             self::$running = false;
         }
@@ -116,55 +128,43 @@ final class DBScheme
         $dir = self::sourceDir();
 
         if (!is_dir($dir)) {
-            self::log('DB SCHEME SKIP', [
-                'reason' => 'Directory does not exist',
-                'dir' => $dir,
-            ]);
             return;
         }
 
         $files = self::findFiles($dir);
         $state = self::readState();
 
-        self::log('DB SCHEME START', [
-            'dir' => $dir,
-            'files' => count($files),
-            'mode' => self::mode(),
-        ]);
-
         foreach ($files as $relativePath => $fullPath) {
-            self::processFile($pdo, $relativePath, $fullPath, $state);
+            $fileHash = sha1_file($fullPath);
+
+            if ($fileHash === false) {
+                continue;
+            }
+
+            $savedFileHash = $state['files'][$relativePath]['hash'] ?? null;
+
+            if (!self::alwaysReadFiles() && $savedFileHash === $fileHash) {
+                continue;
+            }
+
+            self::processFile($pdo, $relativePath, $fullPath, $fileHash, $state);
         }
 
         self::writeState($state);
-
-        self::log('DB SCHEME END', [
-            'dir' => $dir,
-            'files' => count($files),
-        ]);
     }
 
-    private static function processFile(PDO $pdo, string $relativePath, string $fullPath, array &$state): void
+    private static function processFile(PDO $pdo, string $relativePath, string $fullPath, string $fileHash, array &$state): void
     {
         $content = file_get_contents($fullPath);
 
         if ($content === false) {
-            self::log('DB SCHEME FILE ERROR', [
-                'file' => $relativePath,
-                'action' => 'read',
-                'result' => 'failed',
-            ]);
+            self::logError($relativePath, 'READ FILE', '', new RuntimeException('Nie udało się odczytać pliku'));
             return;
         }
 
         $statements = self::splitSqlStatements($content);
 
-        self::log('DB SCHEME FILE', [
-            'file' => $relativePath,
-            'statements' => count($statements),
-        ]);
-
-        foreach ($statements as $index => $statement) {
+        foreach ($statements as $statement) {
             $statement = trim($statement);
 
             if ($statement === '') {
@@ -173,77 +173,149 @@ final class DBScheme
 
             $statementHash = sha1($statement);
             $stateKey = $relativePath . '::' . $statementHash;
-            $alreadyDone = !empty($state[$stateKey]['done']);
+            $alreadyDone = !empty($state['statements'][$stateKey]['done']);
 
             if ($alreadyDone) {
-                self::log('DB SCHEME STATEMENT SKIP', [
-                    'file' => $relativePath,
-                    'statement_index' => $index + 1,
-                    'hash' => $statementHash,
-                    'reason' => 'already executed',
-                ]);
                 continue;
             }
 
-            self::log('DB SCHEME STATEMENT RUN', [
-                'file' => $relativePath,
-                'statement_index' => $index + 1,
-                'hash' => $statementHash,
-                'sql' => $statement,
-            ]);
-
             try {
-                self::applyStatement($pdo, $statement);
+                [$targetCommand, $executedCommand, $targetSql, $executedSql, $changed] = self::applyStatement($pdo, $statement);
+
+                if ($changed) {
+                    self::logChange(
+                        $relativePath,
+                        $targetCommand,
+                        $executedCommand,
+                        $targetSql,
+                        $executedSql
+                    );
+                }
 
                 $now = date('Y-m-d H:i:s');
-                $existing = $state[$stateKey] ?? [];
+                $existing = $state['statements'][$stateKey] ?? [];
 
-                $state[$stateKey] = [
+                $state['statements'][$stateKey] = [
                     'key' => $stateKey,
                     'file' => $relativePath,
                     'hash' => $statementHash,
-                    'sql' => $statement,
                     'done' => true,
                     'count' => ((int) ($existing['count'] ?? 0)) + 1,
                     'first_at' => $existing['first_at'] ?? $now,
                     'last_at' => $now,
                 ];
-
-                self::log('DB SCHEME STATEMENT OK', [
-                    'file' => $relativePath,
-                    'statement_index' => $index + 1,
-                    'hash' => $statementHash,
-                ]);
             } catch (Throwable $e) {
-                self::log('DB SCHEME STATEMENT ERROR', [
-                    'file' => $relativePath,
-                    'statement_index' => $index + 1,
-                    'hash' => $statementHash,
-                    'sql' => $statement,
-                    'error' => $e->getMessage(),
-                    'code' => (string) $e->getCode(),
-                ]);
+                self::logError($relativePath, self::extractCommand($statement), $statement, $e);
             }
         }
+
+        $state['files'][$relativePath] = [
+            'file' => $relativePath,
+            'hash' => $fileHash,
+            'last_at' => date('Y-m-d H:i:s'),
+        ];
     }
 
-    private static function applyStatement(PDO $pdo, string $statement): void
+    private static function applyStatement(PDO $pdo, string $statement): array
     {
         $definition = self::parseCreateTableDefinition($statement);
 
         if ($definition === null) {
-            $pdo->exec($statement);
-            return;
+            $targetCommand = self::extractCommand($statement);
+            $affected = $pdo->exec($statement);
+
+            $changed = self::statementShouldBeLogged($targetCommand, $affected);
+
+            return [
+                $targetCommand,
+                $targetCommand,
+                $statement,
+                $statement,
+                $changed,
+            ];
         }
 
         if (!self::tableExists($pdo, $definition['table'])) {
             $pdo->exec($statement);
-            self::verifyColumnsExist($pdo, $definition);
-            return;
+
+            return [
+                'CREATE TABLE',
+                'CREATE TABLE',
+                $statement,
+                $statement,
+                true,
+            ];
         }
 
-        self::syncMissingColumns($pdo, $definition);
-        self::verifyColumnsExist($pdo, $definition);
+        $existing = self::getExistingColumns($pdo, $definition['table']);
+
+        foreach ($definition['columns'] as $columnName => $columnDefinition) {
+            if (isset($existing[$columnName])) {
+                continue;
+            }
+
+            $executedSql = 'ALTER TABLE `' . str_replace('`', '``', $definition['table']) . '` ADD COLUMN `' . str_replace('`', '``', $columnName) . '` ' . $columnDefinition;
+            $pdo->exec($executedSql);
+
+            return [
+                'CREATE TABLE',
+                'ALTER TABLE',
+                $statement,
+                $executedSql,
+                true,
+            ];
+        }
+
+        return [
+            'CREATE TABLE',
+            'CREATE TABLE',
+            $statement,
+            $statement,
+            false,
+        ];
+    }
+
+    private static function statementShouldBeLogged(string $command, int|false $affected): bool
+    {
+        $command = strtoupper($command);
+
+        if (in_array($command, ['INSERT', 'UPDATE', 'DELETE', 'REPLACE'], true)) {
+            return (int) $affected > 0;
+        }
+
+        return true;
+    }
+
+    private static function extractCommand(string $statement): string
+    {
+        $statement = ltrim($statement);
+
+        if (preg_match('/^([A-Z]+)\s+([A-Z]+)/i', $statement, $matches)) {
+            $first = strtoupper($matches[1]);
+            $second = strtoupper($matches[2]);
+
+            if ($first === 'CREATE' && $second === 'TABLE') {
+                return 'CREATE TABLE';
+            }
+
+            if ($first === 'ALTER' && $second === 'TABLE') {
+                return 'ALTER TABLE';
+            }
+
+            if ($first === 'INSERT' && $second === 'INTO') {
+                return 'INSERT';
+            }
+
+            if ($first === 'DELETE' && $second === 'FROM') {
+                return 'DELETE';
+            }
+        }
+
+        if (preg_match('/^([A-Z]+)/i', $statement, $matches)) {
+            return strtoupper($matches[1]);
+        }
+
+        return 'SQL';
     }
 
     private static function tableExists(PDO $pdo, string $table): bool
@@ -274,48 +346,6 @@ final class DBScheme
         }
 
         return $columns;
-    }
-
-    private static function syncMissingColumns(PDO $pdo, array $definition): void
-    {
-        $table = $definition['table'];
-        $columns = $definition['columns'] ?? [];
-        $existing = self::getExistingColumns($pdo, $table);
-
-        foreach ($columns as $columnName => $columnDefinition) {
-            if (isset($existing[$columnName])) {
-                continue;
-            }
-
-            $sql = 'ALTER TABLE `' . str_replace('`', '``', $table) . '` ADD COLUMN `' . str_replace('`', '``', $columnName) . '` ' . $columnDefinition;
-            $pdo->exec($sql);
-
-            self::log('DB SCHEME COLUMN ADD', [
-                'table' => $table,
-                'column' => $columnName,
-                'sql' => $sql,
-            ]);
-        }
-    }
-
-    private static function verifyColumnsExist(PDO $pdo, array $definition): void
-    {
-        $table = $definition['table'];
-        $columns = $definition['columns'] ?? [];
-        $existing = self::getExistingColumns($pdo, $table);
-        $missing = [];
-
-        foreach ($columns as $columnName => $columnDefinition) {
-            if (!isset($existing[$columnName])) {
-                $missing[] = $columnName;
-            }
-        }
-
-        if (!empty($missing)) {
-            throw new RuntimeException(
-                'Brakuje kolumn po synchronizacji tabeli `' . $table . '`: ' . implode(', ', $missing)
-            );
-        }
     }
 
     private static function findFiles(string $dir): array
@@ -354,78 +384,48 @@ final class DBScheme
         $file = self::stateFile();
 
         if (!is_file($file)) {
-            return [];
+            return [
+                'files' => [],
+                'statements' => [],
+            ];
         }
 
         $content = file_get_contents($file);
 
         if ($content === false || trim($content) === '') {
-            return [];
+            return [
+                'files' => [],
+                'statements' => [],
+            ];
         }
 
-        $entries = [];
-        $lines = preg_split("/\\r\\n|\\n|\\r/", $content);
-        $current = null;
+        $decoded = json_decode($content, true);
 
-        foreach ($lines as $line) {
-            $trimmed = trim($line);
-
-            if ($trimmed === '[[DB_SCHEME_STATE]]') {
-                $current = [];
-                continue;
-            }
-
-            if ($trimmed === '[[/DB_SCHEME_STATE]]') {
-                if (is_array($current) && !empty($current['key'])) {
-                    $entries[$current['key']] = $current;
-                }
-
-                $current = null;
-                continue;
-            }
-
-            if (!is_array($current) || $trimmed === '' || !str_contains($line, '=')) {
-                continue;
-            }
-
-            [$name, $value] = explode('=', $line, 2);
-            $name = trim($name);
-            $value = trim($value);
-
-            if ($name === '') {
-                continue;
-            }
-
-            $decoded = json_decode($value, true);
-            $current[$name] = json_last_error() === JSON_ERROR_NONE ? $decoded : $value;
+        if (!is_array($decoded)) {
+            return [
+                'files' => [],
+                'statements' => [],
+            ];
         }
 
-        return $entries;
+        if (!isset($decoded['files']) || !is_array($decoded['files'])) {
+            $decoded['files'] = [];
+        }
+
+        if (!isset($decoded['statements']) || !is_array($decoded['statements'])) {
+            $decoded['statements'] = [];
+        }
+
+        return $decoded;
     }
 
     private static function writeState(array $state): void
     {
-        ksort($state);
-        $text = '';
-
-        foreach ($state as $entry) {
-            $text .= "[[DB_SCHEME_STATE]]\n";
-
-            foreach (['key', 'file', 'hash', 'sql', 'done', 'count', 'first_at', 'last_at'] as $field) {
-                if (!array_key_exists($field, $entry)) {
-                    continue;
-                }
-
-                $text .= $field . '=' . json_encode(
-                    $entry[$field],
-                    JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
-                ) . "\n";
-            }
-
-            $text .= "[[/DB_SCHEME_STATE]]\n\n";
-        }
-
-        @file_put_contents(self::stateFile(), $text, LOCK_EX);
+        @file_put_contents(
+            self::stateFile(),
+            json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            LOCK_EX
+        );
     }
 
     private static function saveErrorsEnabled(): bool
@@ -435,24 +435,6 @@ final class DBScheme
         }
 
         return (bool) fwConfig('save_errors', true);
-    }
-
-    private static function requestMethod(): string
-    {
-        if (function_exists('fwRequestMethod')) {
-            return (string) fwRequestMethod();
-        }
-
-        return is_string($_SERVER['REQUEST_METHOD'] ?? null) ? $_SERVER['REQUEST_METHOD'] : 'CLI';
-    }
-
-    private static function requestUri(): string
-    {
-        if (function_exists('fwRequestUri')) {
-            return (string) fwRequestUri();
-        }
-
-        return is_string($_SERVER['REQUEST_URI'] ?? null) ? $_SERVER['REQUEST_URI'] : '';
     }
 
     private static function normalizeLogValue($value): string
@@ -476,19 +458,43 @@ final class DBScheme
         return (string) $value;
     }
 
-    private static function log(string $title, array $context = []): void
+    private static function logChange(string $file, string $targetCommand, string $executedCommand, string $targetSql, string $executedSql): void
     {
         if (!self::saveErrorsEnabled()) {
             return;
         }
 
         $lines = [];
-        $lines[] = '[' . date('Y-m-d H:i:s') . '] ' . $title;
+        $lines[] = '[' . date('Y-m-d H:i:s') . '] DB SCHEME CHANGE';
+        $lines[] = 'file: ' . $file;
+        $lines[] = 'target_command: ' . $targetCommand;
+        $lines[] = 'executed_command: ' . $executedCommand;
+        $lines[] = 'target_sql: ' . self::normalizeLogValue($targetSql);
+        $lines[] = 'executed_sql: ' . self::normalizeLogValue($executedSql);
+        $lines[] = str_repeat('-', 80);
 
-        foreach ($context as $key => $value) {
-            $lines[] = $key . ': ' . self::normalizeLogValue($value);
+        @file_put_contents(
+            self::logFile(),
+            implode(PHP_EOL, $lines) . PHP_EOL,
+            FILE_APPEND | LOCK_EX
+        );
+    }
+
+    private static function logError(string $file, string $targetCommand, string $targetSql, Throwable $e): void
+    {
+        if (!self::saveErrorsEnabled()) {
+            return;
         }
 
+        $lines = [];
+        $lines[] = '[' . date('Y-m-d H:i:s') . '] DB SCHEME ERROR';
+        $lines[] = 'file: ' . $file;
+        $lines[] = 'target_command: ' . $targetCommand;
+        $lines[] = 'executed_command: ERROR';
+        $lines[] = 'target_sql: ' . self::normalizeLogValue($targetSql);
+        $lines[] = 'executed_sql: ERROR';
+        $lines[] = 'error: ' . $e->getMessage();
+        $lines[] = 'code: ' . (string) $e->getCode();
         $lines[] = str_repeat('-', 80);
 
         @file_put_contents(
@@ -553,7 +559,7 @@ final class DBScheme
     {
         $sql = ltrim($sql, "\xEF\xBB\xBF");
 
-        if (!preg_match('/CREATE\\s+TABLE\\s+(?:IF\\s+NOT\\s+EXISTS\\s+)?((?:`[^`]+`|[a-zA-Z0-9_]+)(?:\\.(?:`[^`]+`|[a-zA-Z0-9_]+))?)/i', $sql, $matches, PREG_OFFSET_CAPTURE)) {
+        if (!preg_match('/CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?((?:`[^`]+`|[a-zA-Z0-9_]+)(?:\.(?:`[^`]+`|[a-zA-Z0-9_]+))?)/i', $sql, $matches, PREG_OFFSET_CAPTURE)) {
             return null;
         }
 
@@ -731,7 +737,7 @@ final class DBScheme
             return null;
         }
 
-        if (preg_match('/^(PRIMARY|UNIQUE|KEY|INDEX|CONSTRAINT|FOREIGN|FULLTEXT|SPATIAL|CHECK)\\b/i', $part)) {
+        if (preg_match('/^(PRIMARY|UNIQUE|KEY|INDEX|CONSTRAINT|FOREIGN|FULLTEXT|SPATIAL|CHECK)\b/i', $part)) {
             return null;
         }
 
@@ -755,7 +761,7 @@ final class DBScheme
             ];
         }
 
-        if (!preg_match('/^([a-zA-Z_][a-zA-Z0-9_]*)\\s+(.+)$/s', $part, $matches)) {
+        if (!preg_match('/^([a-zA-Z_][a-zA-Z0-9_]*)\s+(.+)$/s', $part, $matches)) {
             return null;
         }
 

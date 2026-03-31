@@ -10,6 +10,7 @@ return [
         'pass' => '',
     ],
     'db_scheme_check' => 2,
+    'db_scheme_always_read_files' => true,
     'menu_items' => [
         ['label' => 'Start', 'url' => ''],
         ['label' => 'Kategorie', 'url' => 'kategorie/'],
