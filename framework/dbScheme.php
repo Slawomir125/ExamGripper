@@ -132,7 +132,12 @@ final class DBScheme
         }
 
         $files = self::findFiles($dir);
-        $state = self::readState();
+        $readState = !self::alwaysReadFiles();
+
+        $state = $readState ? self::readState() : [
+            'files' => [],
+            'statements' => [],
+        ];
 
         foreach ($files as $relativePath => $fullPath) {
             $fileHash = sha1_file($fullPath);
@@ -141,19 +146,21 @@ final class DBScheme
                 continue;
             }
 
-            $savedFileHash = $state['files'][$relativePath]['hash'] ?? null;
+            if ($readState) {
+                $savedFileHash = $state['files'][$relativePath]['hash'] ?? null;
 
-            if (!self::alwaysReadFiles() && $savedFileHash === $fileHash) {
-                continue;
+                if ($savedFileHash === $fileHash) {
+                    continue;
+                }
             }
 
-            self::processFile($pdo, $relativePath, $fullPath, $fileHash, $state);
+            self::processFile($pdo, $relativePath, $fullPath, $fileHash, $state, $readState);
         }
 
         self::writeState($state);
     }
 
-    private static function processFile(PDO $pdo, string $relativePath, string $fullPath, string $fileHash, array &$state): void
+    private static function processFile(PDO $pdo, string $relativePath, string $fullPath, string $fileHash, array &$state, bool $readState): void
     {
         $content = file_get_contents($fullPath);
 
@@ -173,7 +180,7 @@ final class DBScheme
 
             $statementHash = sha1($statement);
             $stateKey = $relativePath . '::' . $statementHash;
-            $alreadyDone = !empty($state['statements'][$stateKey]['done']);
+            $alreadyDone = $readState && !empty($state['statements'][$stateKey]['done']);
 
             if ($alreadyDone) {
                 continue;
