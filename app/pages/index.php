@@ -166,6 +166,85 @@ pageStart('INF.04 Builder');
     </div>
 </section>
 
+<section class="py-5 my-5 border-top" animation="fade-in" animation-trigger="view" animation-time="0.7s" animation-margin="140px">
+    <div class="row w-100 mb-4">
+        <div class="col-12 text-center">
+            <h2 class="h3 fw-bold">Teoria INF.04</h2>
+            <p class="text-muted">Sprawdź swoją wiedzę przed prawdziwym egzaminem</p>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center g-4" id="quiz-container" defaultBinding="quizPytania">
+        <div template class="col-12 col-lg-6">
+            <div class="card border-0 shadow-sm rounded-4 h-100 mx-auto" style="max-width: 600px;">
+                <div class="card-body p-4 p-md-5">
+                    <h5 class="fw-bold mb-4 fs-5">{{pytanie}}</h5>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-outline-secondary text-start p-3 odp-btn" clickData="sprawdz" data-poprawna="{{poprawna}}" data-wybrana="a" style="border-radius: 10px; transition: all 0.2s;">
+                            <span class="fw-bold me-2" style="color: #0d6efd;">A.</span> {{odp_a}}
+                        </button>
+                        <button class="btn btn-outline-secondary text-start p-3 odp-btn" clickData="sprawdz" data-poprawna="{{poprawna}}" data-wybrana="b" style="border-radius: 10px; transition: all 0.2s;">
+                            <span class="fw-bold me-2" style="color: #0d6efd;">B.</span> {{odp_b}}
+                        </button>
+                        <button class="btn btn-outline-secondary text-start p-3 odp-btn" clickData="sprawdz" data-poprawna="{{poprawna}}" data-wybrana="c" style="border-radius: 10px; transition: all 0.2s;">
+                            <span class="fw-bold me-2" style="color: #0d6efd;">C.</span> {{odp_c}}
+                        </button>
+                        <button class="btn btn-outline-secondary text-start p-3 odp-btn" clickData="sprawdz" data-poprawna="{{poprawna}}" data-wybrana="d" style="border-radius: 10px; transition: all 0.2s;">
+                            <span class="fw-bold me-2" style="color: #0d6efd;">D.</span> {{odp_d}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .odp-btn:hover:not(:disabled) {
+        background-color: #f8f9fa;
+        color: #212529;
+        border-color: #0d6efd;
+    }
+    .odp-btn.btn-success span, .odp-btn.btn-danger span {
+        color: white !important;
+    }
+</style>
+
+<script>
+onReady(() => {
+    clickData('sprawdz', (btn) => {
+        const wybrana = btn.getAttribute('data-wybrana');
+        const poprawna = btn.getAttribute('data-poprawna');
+        const cardBody = btn.closest('.card-body');
+        const btns = cardBody.querySelectorAll('.odp-btn');
+        
+        btns.forEach(b => {
+            b.disabled = true;
+            b.style.opacity = '1';
+            let w = b.getAttribute('data-wybrana');
+            
+            if (w === poprawna) {
+                b.classList.remove('btn-outline-secondary');
+                b.classList.add('btn-success', 'text-white', 'border-success', 'shadow-sm');
+            } else if (w === wybrana && wybrana !== poprawna) {
+                b.classList.remove('btn-outline-secondary');
+                b.classList.add('btn-danger', 'text-white', 'border-danger');
+            } else {
+                b.classList.add('opacity-50');
+            }
+        });
+    });
+});
+</script>
+
 <?php
-pageEnd();
+// Pobieramy 2 losowe pytania i przekazujemy jako zmienną do wbudowanego silnika bindingu
+$quizData = DB_QUERY('SELECT * FROM quiz_pytania ORDER BY RAND() LIMIT 2');
+if (!is_array($quizData)) {
+    $quizData = [];
+}
+
+pageEnd([
+    'quizPytania' => $quizData
+]);
 ?>

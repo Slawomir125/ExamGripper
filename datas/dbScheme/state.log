@@ -75,3 +75,25 @@ first_at="2026-03-28 18:03:14"
 last_at="2026-03-28 18:03:14"
 [[/DB_SCHEME_STATE]]
 
+[[DB_SCHEME_STATE]]
+key="03_quiz.sql::041a97aeb9cddcba99ae577f6c72594900d919b8"
+file="03_quiz.sql"
+hash="041a97aeb9cddcba99ae577f6c72594900d919b8"
+sql="INSERT INTO quiz_pytania (pytanie, odp_a, odp_b, odp_c, odp_d, poprawna) VALUES\n('Jaką funkcją w PHP połączysz się z bazą danych MySQL wykorzystując interfejs obiektowy (nie licząc PDO)?', 'mysqli_connect()', 'new PDO()', 'new mysqli()', 'db_connect()', 'c'),\n('W jakim języku pisze się skrypty domyślnie wykonywane po stronie przeglądarki klienta?', 'PHP', 'Python', 'JavaScript', 'C++', 'c'),\n('Który znacznik HTML służy do definiowania alternatywnego tekstu dla obrazka?', 'title', 'src', 'alt', 'href', 'c'),\n('Jakie jest domyślne zachowanie typu input \"submit\" w formularzu HTML?', 'Czyści wszystkie pola formularza', 'Wysyła dane formularza', 'Otwiera nowe okno w przeglądarce', 'Zapisuje dane w formacie JSON', 'b'),\n('Które zapytanie SQL służy do wybierania danych z bazy?', 'GET', 'SELECT', 'FETCH', 'EXTRACT', 'b')"
+done=true
+count=1
+first_at="2026-03-31 23:38:08"
+last_at="2026-03-31 23:38:08"
+[[/DB_SCHEME_STATE]]
+
+[[DB_SCHEME_STATE]]
+key="03_quiz.sql::792d89a7251e697374d4b6ac02f3cfa8ae4dba41"
+file="03_quiz.sql"
+hash="792d89a7251e697374d4b6ac02f3cfa8ae4dba41"
+sql="CREATE TABLE IF NOT EXISTS quiz_pytania (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    pytanie TEXT NOT NULL,\n    odp_a VARCHAR(255) NOT NULL,\n    odp_b VARCHAR(255) NOT NULL,\n    odp_c VARCHAR(255) NOT NULL,\n    odp_d VARCHAR(255) NOT NULL,\n    poprawna CHAR(1) NOT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci"
+done=true
+count=1
+first_at="2026-03-31 23:38:08"
+last_at="2026-03-31 23:38:08"
+[[/DB_SCHEME_STATE]]
+
