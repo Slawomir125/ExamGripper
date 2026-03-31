@@ -1,5 +1,5 @@
 [[ERROR_LOG]]
-[2026-03-30 19:39:09] - [2026-03-30 20:21:28] 15 times
+[2026-03-30 19:39:09] - [2026-03-30 20:33:24] 16 times
 key="64f0bf2edbbc7b082b716c276c153a84b78afb39"
 title="PHP EXCEPTION"
 type="EXCEPTION"
@@ -10,9 +10,9 @@ line=223
 method="GET"
 url="/ExamGripper/kategorie/"
 trace="#0 C:\\xampp\\htdocs\\ExamGripper\\framework\\db.php(223): PDOStatement->execute(Array)\n#1 C:\\xampp\\htdocs\\ExamGripper\\framework\\db.php(252): DB::runQuery('query', 'SELECT `id`, `n...', Array, false)\n#2 C:\\xampp\\htdocs\\ExamGripper\\framework\\db.php(261): DB::runQuery('query', 'SELECT `id`, `n...', Array)\n#3 C:\\xampp\\htdocs\\ExamGripper\\framework\\db.php(291): DB::query('SELECT `id`, `n...', Array)\n#4 C:\\xampp\\htdocs\\ExamGripper\\framework\\db.php(372): DB_QUERY('SELECT `id`, `n...', Array)\n#5 C:\\xampp\\htdocs\\ExamGripper\\app\\pages\\kategorie.php(41): DB_SELECT('kategorie', Array, Array, 'ORDER BY id ASC')\n#6 C:\\xampp\\htdocs\\ExamGripper\\index.php(52): require('C:\\\\xampp\\\\htdocs...')\n#7 {main}"
-count=15
+count=16
 first_at="2026-03-30 19:39:09"
-last_at="2026-03-30 20:21:28"
+last_at="2026-03-30 20:33:24"
 [[/ERROR_LOG]]
 
 [[ERROR_LOG]]
