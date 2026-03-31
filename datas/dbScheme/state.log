@@ -3,17 +3,17 @@
         "01_schema.sql": {
             "file": "01_schema.sql",
             "hash": "1b48a0fdcf13ae092f9b48481c7f2c5028801be4",
-            "last_at": "2026-03-31 20:03:19"
+            "last_at": "2026-03-31 20:41:57"
         },
         "02_data.sql": {
             "file": "02_data.sql",
             "hash": "30d93b0b83348991bb20ebe1dfce3f908149b67d",
-            "last_at": "2026-03-31 20:03:19"
+            "last_at": "2026-03-31 20:41:57"
         },
         "03_users.sql": {
             "file": "03_users.sql",
-            "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-            "last_at": "2026-03-31 20:03:19"
+            "hash": "fedf746cc3578905ed7f2f22fb648d5acdc45fd1",
+            "last_at": "2026-03-31 20:41:57"
         }
     },
     "statements": {
@@ -23,8 +23,8 @@
             "hash": "101e223fc8ca90fb8a87c2bba419c289383f490b",
             "done": true,
             "count": 1,
-            "first_at": "2026-03-31 20:03:19",
-            "last_at": "2026-03-31 20:03:19"
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
         },
         "01_schema.sql::75ff079362dafeb399582968751d1f9745a109e0": {
             "key": "01_schema.sql::75ff079362dafeb399582968751d1f9745a109e0",
@@ -32,8 +32,8 @@
             "hash": "75ff079362dafeb399582968751d1f9745a109e0",
             "done": true,
             "count": 1,
-            "first_at": "2026-03-31 20:03:19",
-            "last_at": "2026-03-31 20:03:19"
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
         },
         "01_schema.sql::fffe75763ce378865ed17fba8d92a22b86cbc86b": {
             "key": "01_schema.sql::fffe75763ce378865ed17fba8d92a22b86cbc86b",
@@ -41,8 +41,8 @@
             "hash": "fffe75763ce378865ed17fba8d92a22b86cbc86b",
             "done": true,
             "count": 1,
-            "first_at": "2026-03-31 20:03:19",
-            "last_at": "2026-03-31 20:03:19"
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
         },
         "01_schema.sql::d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c": {
             "key": "01_schema.sql::d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c",
@@ -50,8 +50,8 @@
             "hash": "d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c",
             "done": true,
             "count": 1,
-            "first_at": "2026-03-31 20:03:19",
-            "last_at": "2026-03-31 20:03:19"
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
         },
         "02_data.sql::d079d736248c956d37231ca45e920dc9dd55e551": {
             "key": "02_data.sql::d079d736248c956d37231ca45e920dc9dd55e551",
@@ -59,8 +59,8 @@
             "hash": "d079d736248c956d37231ca45e920dc9dd55e551",
             "done": true,
             "count": 1,
-            "first_at": "2026-03-31 20:03:19",
-            "last_at": "2026-03-31 20:03:19"
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
         },
         "02_data.sql::88508f629d092c5743a2ce18e585849120cb4964": {
             "key": "02_data.sql::88508f629d092c5743a2ce18e585849120cb4964",
@@ -68,8 +68,8 @@
             "hash": "88508f629d092c5743a2ce18e585849120cb4964",
             "done": true,
             "count": 1,
-            "first_at": "2026-03-31 20:03:19",
-            "last_at": "2026-03-31 20:03:19"
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
         },
         "02_data.sql::91218cd190a33c5862e6b1f1006517b6245d9dc4": {
             "key": "02_data.sql::91218cd190a33c5862e6b1f1006517b6245d9dc4",
@@ -77,8 +77,17 @@
             "hash": "91218cd190a33c5862e6b1f1006517b6245d9dc4",
             "done": true,
             "count": 1,
-            "first_at": "2026-03-31 20:03:19",
-            "last_at": "2026-03-31 20:03:19"
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
+        },
+        "03_users.sql::e97cb41a3f402a70b5f505b6b1c8d189ff828c35": {
+            "key": "03_users.sql::e97cb41a3f402a70b5f505b6b1c8d189ff828c35",
+            "file": "03_users.sql",
+            "hash": "e97cb41a3f402a70b5f505b6b1c8d189ff828c35",
+            "done": true,
+            "count": 1,
+            "first_at": "2026-03-31 20:41:57",
+            "last_at": "2026-03-31 20:41:57"
         }
     }
 }

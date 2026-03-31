@@ -14,8 +14,7 @@ return [
     'menu_items' => [
         ['label' => 'Start', 'url' => ''],
         ['label' => 'Kategorie', 'url' => 'kategorie/'],
-        ['label' => 'Zadania', 'url' => 'zadania/'],
-        ['label' => 'Postępy', 'url' => 'postepy/'],
+        ['label' => 'Losowe zadanie', 'url' => 'zadania/'],
     ],
     'debug' => true,
     'save_errors' => true,
