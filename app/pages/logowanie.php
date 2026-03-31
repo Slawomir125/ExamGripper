@@ -2,7 +2,7 @@
 session_start();
 
 pageStart("Logowanie");
-echo $_SESSION['user_name'];
+
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
     $email = $_POST["email"] ?? "";
