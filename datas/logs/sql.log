@@ -1048,3 +1048,63 @@ code: 42S02
 file: C:\xampp\htdocs\ExamGripper\framework\db.php
 line: 223
 --------------------------------------------------------------------------------
+[2026-03-31 23:41:42] SQL ERROR
+method: GET
+url: /ExamGripper/kategorie/
+mode: query
+sql: SELECT `id`, `nazwa` FROM `kategorie` ORDER BY id ASC
+params: Array
+(
+)
+
+retry_after_db_scheme: true
+error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'examgripper.kategorie' doesn't exist
+code: 42S02
+file: C:\xampp\htdocs\ExamGripper\framework\db.php
+line: 223
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] SQL ERROR
+method: GET
+url: /ExamGripper/kategorie/
+mode: query
+sql: SELECT `id`, `nazwa` FROM `kategorie` ORDER BY id ASC
+params: Array
+(
+)
+
+retry_after_db_scheme: false
+error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'examgripper.kategorie' doesn't exist
+code: 42S02
+file: C:\xampp\htdocs\ExamGripper\framework\db.php
+line: 223
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] SQL ERROR
+method: GET
+url: /ExamGripper/zadania/
+mode: get
+sql: SELECT * FROM pytania ORDER BY RAND() LIMIT 1
+params: Array
+(
+)
+
+retry_after_db_scheme: true
+error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'examgripper.pytania' doesn't exist
+code: 42S02
+file: C:\xampp\htdocs\ExamGripper\framework\db.php
+line: 223
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] SQL ERROR
+method: GET
+url: /ExamGripper/zadania/
+mode: get
+sql: SELECT * FROM pytania ORDER BY RAND() LIMIT 1
+params: Array
+(
+)
+
+retry_after_db_scheme: false
+error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'examgripper.pytania' doesn't exist
+code: 42S02
+file: C:\xampp\htdocs\ExamGripper\framework\db.php
+line: 223
+--------------------------------------------------------------------------------

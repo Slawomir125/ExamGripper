@@ -21154,3 +21154,1997 @@ reason: already executed
 dir: C:/xampp/htdocs/ExamGripper/app/db/
 files: 3
 --------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:23] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:41:42] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:09] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:36] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:42:59] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:45:57] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:48:35] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:06] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:12] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:15] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB CREATE DATABASE OK
+database: examgripper
+sql: CREATE DATABASE IF NOT EXISTS `examgripper` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME START
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+mode: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME FILE
+file: 01_schema.sql
+statements: 4
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 1
+hash: 101e223fc8ca90fb8a87c2bba419c289383f490b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 2
+hash: 75ff079362dafeb399582968751d1f9745a109e0
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 3
+hash: fffe75763ce378865ed17fba8d92a22b86cbc86b
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 01_schema.sql
+statement_index: 4
+hash: d0a567c490eefc5f3048a5cfac9eef0bacd5ce1c
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME FILE
+file: 02_data.sql
+statements: 3
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 1
+hash: d079d736248c956d37231ca45e920dc9dd55e551
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 2
+hash: 88508f629d092c5743a2ce18e585849120cb4964
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 02_data.sql
+statement_index: 3
+hash: 91218cd190a33c5862e6b1f1006517b6245d9dc4
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME FILE
+file: 03_quiz.sql
+statements: 2
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 1
+hash: 792d89a7251e697374d4b6ac02f3cfa8ae4dba41
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME STATEMENT SKIP
+file: 03_quiz.sql
+statement_index: 2
+hash: 041a97aeb9cddcba99ae577f6c72594900d919b8
+reason: already executed
+--------------------------------------------------------------------------------
+[2026-03-31 23:49:26] DB SCHEME END
+dir: C:/xampp/htdocs/ExamGripper/app/db/
+files: 3
+--------------------------------------------------------------------------------
