@@ -35,7 +35,7 @@ pageStart("Kontakt");
                 <div class="mt-4">
                     <div class="fw-semibold mb-2">Adres</div>
                     <div>
-                        ul. Gajowa 8<br>
+                        ul. Ujazdowska 67<br>
                         47-143 Zimna Wódka
                     </div>
                 </div>
