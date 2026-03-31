@@ -2,14 +2,14 @@
 pageStart('INF.04 Builder');
 ?>
 
-<section class="py-5 my-4 my-md-5 border-bottom" children-animation="fade-up" animation-trigger="default" animation-time="0.6s" children-animation-delay="0.12s">
+<section class="inf04-hero py-5 my-4 my-md-5 border-bottom" children-animation="fade-up" animation-trigger="default" animation-time="0.6s" children-animation-delay="0.12s">
     <div class="row align-items-center g-4">
         <div class="col-12 col-lg-7">
-            <div class="text-uppercase fw-semibold mb-2" style="color: #38bdf8; font-size: 0.85rem; letter-spacing: 0.5px;">
+            <div class="inf04-section-label text-uppercase fw-semibold mb-2">
                 Nauka do egzaminu praktycznego
             </div>
 
-            <h1 class="display-5 fw-bold mb-3" style="line-height: 1.25; text-wrap: balance;">
+            <h1 class="inf04-hero-title display-5 fw-bold mb-3">
                 Układaj bloczki i buduj poprawne rozwiązania zadań INF.04
             </h1>
 
@@ -18,11 +18,11 @@ pageStart('INF.04 Builder');
             </p>
 
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-start mt-4">
-                <a href="<?= route('zadania/') ?>" class="btn btn-lg px-4 fw-semibold border-0 text-white" style="border-radius: 8px; background-color: #0d6efd;" animation="pop" animation-delay="0.15s">
+                <a href="<?= route('zadania/') ?>" class="btn btn-lg px-4 fw-semibold border-0 text-white inf04-btn-primary" animation="pop" animation-delay="0.15s">
                     Rozpocznij naukę
                 </a>
 
-                <a href="<?= route('kategorie/') ?>" class="btn btn-lg px-4 fw-semibold" style="border-radius: 8px; border: 2px solid #0d6efd; color: #0d6efd; background-color: transparent;" animation="pop" animation-delay="0.25s">
+                <a href="<?= route('kategorie/') ?>" class="btn btn-lg px-4 fw-semibold inf04-btn-outline" animation="pop" animation-delay="0.25s">
                     Zobacz kategorie
                 </a>
             </div>
@@ -34,9 +34,9 @@ pageStart('INF.04 Builder');
             </div>
 
             <div class="vstack gap-3" children-animation="fade-up" animation-trigger="default" animation-time="0.55s" children-animation-delay="0.1s">
-                <div class="card border-0 text-white shadow-sm" style="background-color: #0f172a; border-radius: 12px;">
+                <div class="card border-0 text-white shadow-sm inf04-dark-card inf04-step-card">
                     <div class="card-body p-3 d-flex align-items-center gap-3">
-                        <div class="fs-1 fw-bold" style="color: #38bdf8; min-width: 40px; text-align: center;">1</div>
+                        <div class="fs-1 fw-bold inf04-step-number">1</div>
                         <div>
                             <div class="fw-semibold">Wybierz kategorię</div>
                             <div class="small text-white-50">Przejdź do działu zgodnego z zakresem egzaminu INF.04.</div>
@@ -44,9 +44,9 @@ pageStart('INF.04 Builder');
                     </div>
                 </div>
 
-                <div class="card border-0 text-white shadow-sm" style="background-color: #0f172a; border-radius: 12px;">
+                <div class="card border-0 text-white shadow-sm inf04-dark-card inf04-step-card">
                     <div class="card-body p-3 d-flex align-items-center gap-3">
-                        <div class="fs-1 fw-bold" style="color: #38bdf8; min-width: 40px; text-align: center;">2</div>
+                        <div class="fs-1 fw-bold inf04-step-number">2</div>
                         <div>
                             <div class="fw-semibold">Ułóż rozwiązanie</div>
                             <div class="small text-white-50">Przeciągnij bloczki tak, aby stworzyć poprawny kod zgodny z poleceniem.</div>
@@ -54,9 +54,9 @@ pageStart('INF.04 Builder');
                     </div>
                 </div>
 
-                <div class="card border-0 text-white shadow-sm" style="background-color: #0f172a; border-radius: 12px;">
+                <div class="card border-0 text-white shadow-sm inf04-dark-card inf04-step-card">
                     <div class="card-body p-3 d-flex align-items-center gap-3">
-                        <div class="fs-1 fw-bold" style="color: #38bdf8; min-width: 40px; text-align: center;">3</div>
+                        <div class="fs-1 fw-bold inf04-step-number">3</div>
                         <div>
                             <div class="fw-semibold">Sprawdź wynik</div>
                             <div class="small text-white-50">Zobacz, które elementy są poprawne i czego jeszcze brakuje.</div>
@@ -71,7 +71,7 @@ pageStart('INF.04 Builder');
 <section class="py-5 my-5 border-bottom" animation="fade-in" animation-trigger="view" animation-time="0.7s" animation-margin="140px">
     <div class="row g-4 align-items-stretch">
         <div class="col-12 col-lg-6">
-            <div class="card h-100 border-0 text-white shadow-sm" style="background-color: #0f172a; border-radius: 16px;">
+            <div class="card h-100 border-0 text-white shadow-sm inf04-dark-card inf04-mode-card">
                 <div class="card-body p-4 p-lg-5">
                     <div class="small text-uppercase fw-semibold mb-2 opacity-75">
                         Tryb nauki
@@ -87,15 +87,15 @@ pageStart('INF.04 Builder');
 
                     <div class="vstack gap-3">
                         <div class="d-flex align-items-center gap-3">
-                            <span style="color: #38bdf8;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
+                            <span class="inf04-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
                             <span>Sprawdzanie odpowiedzi po każdym zadaniu</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
-                            <span style="color: #38bdf8;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
+                            <span class="inf04-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
                             <span>Podpowiedzi i wyjaśnienia poprawnego rozwiązania</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
-                            <span style="color: #38bdf8;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
+                            <span class="inf04-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
                             <span>Wygodna nauka przez układanie bloczków</span>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ pageStart('INF.04 Builder');
         </div>
 
         <div class="col-12 col-lg-6">
-            <div class="card h-100 border-0 text-white shadow-sm" style="background-color: #0f172a; border-radius: 16px;">
+            <div class="card h-100 border-0 text-white shadow-sm inf04-dark-card inf04-mode-card">
                 <div class="card-body p-4 p-lg-5">
                     <div class="small text-uppercase fw-semibold mb-2 opacity-75">
                         Tryb egzaminacyjny
@@ -120,15 +120,15 @@ pageStart('INF.04 Builder');
 
                     <div class="vstack gap-3">
                         <div class="d-flex align-items-center gap-3">
-                            <span style="color: #38bdf8;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
+                            <span class="inf04-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
                             <span>Mniej wskazówek i większy nacisk na samodzielność</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
-                            <span style="color: #38bdf8;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
+                            <span class="inf04-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
                             <span>Zadania wzorowane na części praktycznej egzaminu</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
-                            <span style="color: #38bdf8;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
+                            <span class="inf04-check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg></span>
                             <span>Lepsze przygotowanie do realnej pracy z poleceniem</span>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ pageStart('INF.04 Builder');
 </section>
 
 <section class="py-5 my-5" animation="fade-in" animation-trigger="view" animation-time="0.7s" animation-margin="140px">
-    <div class="card border-0 bg-white shadow-sm" style="border-radius: 16px;">
+    <div class="card border-0 bg-white shadow-sm inf04-light-card">
         <div class="card-body p-4 p-md-5">
             <div class="row g-4 align-items-center">
                 <div class="col-12 col-lg-8">
@@ -157,7 +157,7 @@ pageStart('INF.04 Builder');
                 </div>
 
                 <div class="col-12 col-lg-4 text-lg-end d-grid d-lg-block">
-                    <a href="<?= route('zadania/') ?>" class="btn btn-lg px-4 fw-semibold border-0 text-white" style="border-radius: 8px; background-color: #0d6efd;">
+                    <a href="<?= route('zadania/') ?>" class="btn btn-lg px-4 fw-semibold border-0 text-white inf04-btn-primary">
                         Przejdź do zadań
                     </a>
                 </div>

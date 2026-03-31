@@ -50,7 +50,7 @@ shuffle($bloki);
     <div class="row">
         <div class="col-md-6">
             <h5>Dostępne bloczki</h5>
-            <div id="available-blocks" drop drop-mode="sort" drag-group="blocks" drop-ghost="true" class="border p-3 mb-3" style="min-height: 200px;">
+            <div id="available-blocks" drop drop-mode="sort" drag-group="blocks" drop-ghost="true" class="border p-3 mb-3 rounded shadow" style="min-height: 200px;">
                 <?php foreach ($bloki as $blok): ?>
                     <div drag drag-value="<?= $blok['id'] ?>" class="block-item">
                         <pre class="mb-0"><?= htmlspecialchars($blok['kod']) ?></pre>
@@ -61,8 +61,7 @@ shuffle($bloki);
 
         <div class="col-md-6">
             <h5>Twoje rozwiązanie</h5>
-            <div id="solution-area" drop drop-mode="sort" drag-group="blocks"  drop-ghost="true"  class="border p-3 mb-3" style="min-height: 200px;">
-                <!-- Tutaj użytkownik upuszcza bloczki -->
+            <div id="solution-area" drop drop-mode="sort" drag-group="blocks"  drop-ghost="true"  class="border p-3 mb-3 rounded shadow" style="min-height: 200px;">
             </div>
             <button id="check-btn" class="btn btn-primary">Sprawdź rozwiązanie</button>
             <button id="reset-btn" class="btn btn-secondary ms-2">Reset</button>
@@ -177,15 +176,7 @@ click("next-btn", () => {
 });
 </script>
 
-<style>
-.block-item {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 10px;
-    margin: 5px;
-    cursor: move;
-}
-</style>
+
 
 
 <?php
