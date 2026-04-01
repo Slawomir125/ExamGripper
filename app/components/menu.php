@@ -37,8 +37,8 @@ $userName = $_SESSION['user_name'] ?? '';
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="mobileOffcanvas" style="background-color: #0f172a;">
-      <div class="offcanvas-header py-4 px-4 border-bottom" style="border-color: rgba(255,255,255,0.05) !important;">
+    <div class="offcanvas-lg offcanvas-end eg-navbar-offcanvas" tabindex="-1" id="mobileOffcanvas">
+      <div class="offcanvas-header py-4 px-4 border-bottom eg-navbar-offcanvas-header">
         <h5 class="offcanvas-title d-flex align-items-center gap-2 fw-bold text-white m-0">
           <span class="eg-navbar-brand-icon">
             <i class="bi bi-box-seam-fill eg-navbar-brand-icon-offcanvas"></i>
@@ -68,15 +68,15 @@ $userName = $_SESSION['user_name'] ?? '';
 
           <?php if (!$isLogged): ?>
             <a
-              class="nav-link custom-nav-link fw-medium px-4 py-2 rounded-pill text-center text-lg-start"
+              class="nav-link eg-login-link fw-semibold px-4 py-2 rounded-pill text-center text-lg-start mt-2 mt-lg-0 ms-lg-2"
               href="<?= htmlspecialchars(route('logowanie'), ENT_QUOTES, 'UTF-8') ?>"
             >
-              Zaloguj
+              <i class="bi bi-box-arrow-in-right me-2"></i>Zaloguj
             </a>
           <?php else: ?>
             <div class="dropdown user-dropdown mt-2 mt-lg-0 ms-lg-2">
               <a
-                class="nav-link user-dropdown-toggle fw-medium px-4 py-2 rounded-pill d-flex align-items-center justify-content-center justify-content-lg-start gap-2"
+                class="nav-link user-dropdown-toggle fw-semibold px-4 py-2 rounded-pill d-flex align-items-center justify-content-center justify-content-lg-start gap-2"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -86,6 +86,7 @@ $userName = $_SESSION['user_name'] ?? '';
                   <i class="bi bi-person-fill"></i>
                 </div>
                 <span><?= htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') ?></span>
+                <i class="bi bi-chevron-down small opacity-75"></i>
               </a>
 
               <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu shadow">
