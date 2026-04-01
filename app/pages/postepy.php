@@ -37,7 +37,6 @@ foreach ($kategorie as $kat) {
     ];
 }
 
-// Ostatnie 10 prób
 $historia = DB_QUERY(
     'SELECT p.id, p.czy_poprawne, p.data, q.tresc, k.nazwa AS kategoria
      FROM postepy p

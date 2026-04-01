@@ -14,6 +14,7 @@ return [
         ['label' => 'Start', 'url' => ''],
         ['label' => 'Kategorie', 'url' => 'kategorie/'],
         ['label' => 'Zadania', 'url' => 'zadania/'],
+        ['label' => 'Quiz', 'url' => 'quiz/'],
         ['label' => 'Postępy', 'url' => 'postepy/'],
     ],
     'debug' => true,
