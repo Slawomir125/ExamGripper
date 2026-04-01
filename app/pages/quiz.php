@@ -1,4 +1,5 @@
 <?php
+session_start();
 pageStart('Quiz INF 04');
 ?>
 <section class="py-5 my-5 border-top" animation="fade-in" animation-trigger="view" animation-time="0.7s" animation-margin="140px">

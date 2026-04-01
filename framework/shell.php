@@ -57,7 +57,7 @@ $bodyClass = $templateData['bodyClass'] ?? '';
     </main>
 
     <footer class="app-footer d-flex flex-wrap justify-content-between align-items-center p-3 border-top">
-      <p class="col-md-4 mb-0 text-body-secondary">© 2025 Company, Inc</p>
+      <p class="col-md-4 mb-0 text-body-secondary">© 2025 ExamGripper, Inc</p>
       <ul class="nav col-md-4 justify-content-end">
         <li class="nav-item"><a href="<?= route("regulamin"); ?>" class="nav-link px-2 text-body-secondary">Regulamin</a></li>
         <li class="nav-item"><a href="<?= route("kontakt"); ?>" class="nav-link px-2 text-body-secondary">Kontakt</a></li>
