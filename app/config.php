@@ -13,9 +13,7 @@ return [
     'db_scheme_always_read_files' => true,
     'menu_items' => [
         ['label' => 'Start',     'url' => ''],
-        ['label' => 'Kategorie', 'url' => 'kategorie/'],
         ['label' => 'Losowe zadanie', 'url' => 'zadania/'],
-        ['label' => 'Zadania', 'url' => 'zadania/'],
         ['label' => 'Quiz', 'url' => 'quiz/'],
         ['label' => 'Postępy', 'url' => 'postepy/'],
     ],

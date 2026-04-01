@@ -37,7 +37,7 @@ $userName = $_SESSION['user_name'] ?? '';
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="mobileOffcanvas" style="background-color: #0f172a; border-left: 1px solid rgba(255,255,255,0.05);">
+    <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="mobileOffcanvas" style="background-color: #0f172a;">
       <div class="offcanvas-header py-4 px-4 border-bottom" style="border-color: rgba(255,255,255,0.05) !important;">
         <h5 class="offcanvas-title d-flex align-items-center gap-2 fw-bold text-white m-0">
           <span class="eg-navbar-brand-icon">
