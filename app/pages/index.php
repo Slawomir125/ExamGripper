@@ -166,6 +166,19 @@ pageStart('INF.04 Builder');
     </div>
 </section>
 
+
+
+<style>
+    .odp-btn:hover:not(:disabled) {
+        background-color: rgba(255,255,255,0.1);
+        border-color: #38bdf8 !important;
+    }
+    .odp-btn.btn-success { background-color: #198754 !important; }
+    .odp-btn.btn-danger { background-color: #dc3545 !important; }
+    .odp-btn.btn-success .marker, .odp-btn.btn-danger .marker { color: white !important; }
+</style>
+
+
 <?php
 pageEnd();
 ?>
